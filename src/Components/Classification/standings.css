@@ -1,0 +1,152 @@
+/* Standings */
+.buttons-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: red;
+}
+.select-btn {
+	background-color: transparent;
+	color: white;
+	font-size: 1rem;
+	border: none;
+	padding: 1em;
+	transition: color 0.3s;
+}
+.select-btn:hover {
+	color: black;
+	cursor: pointer;
+}
+.standingsTable img {
+	max-width: 100px;
+}
+.standingsTable {
+	background-color: rgb(0, 0, 0);
+}
+.standings {
+	margin: 1em 0;
+	width: 95%;
+	text-align: center;
+	padding: 0 0 6em;
+	/* background-color: rgb(167, 179, 179); */
+}
+.standings-card {
+	background-color: #e4e4e4;
+	margin-bottom: 0.5em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2em;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	transition: transform 0.3s;
+	cursor: pointer;
+}
+.standings-card:hover {
+	transform: scale(1.03);
+}
+.standings-position {
+	padding: 0.7em;
+	border-right: 1px solid black;
+	min-width: 90px;
+}
+.driver-standings-name {
+	text-align: left;
+	margin-left: 0.5em;
+	min-width: 170px;
+}
+.driver-standings-image {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width: 200px;
+	min-height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.driver-standings-points {
+	background-color: #cacacaef;
+	padding: 0.3em 0.7em;
+	border-radius: 10px;
+	transform: translateX(3em);
+	margin-bottom: 0.5em;
+}
+.team-standings-image {
+	min-height: 100px;
+	min-width: 130px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 0.7em;
+}
+.team-standings-image img {
+	border-radius: 8px;
+}
+.constructor-standings-name {
+	min-width: 160px;
+	text-align: left;
+	margin-left: 0.5em;
+}
+.team-standings-points {
+	padding: 0.5em 1em;
+	background-color: #cacacaef;
+	border-radius: 10px;
+	margin-right: 1em;
+}
+
+.standing-cards-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	animation: wrapper-fade-up 3s 1s forwards;
+	/* animation-delay: 1s; */
+	transform: translateY(25%);
+}
+.constructor-cards {
+	display: flex;
+	flex-direction: column;
+}
+.standings-car-animation {
+	animation: car-to-center 3s forwards;
+}
+.standings-position,
+.team-standings-points {
+	animation: position-fade-down 3s forwards;
+	animation-delay: 5s;
+}
+.standing-card-wrapper {
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin-bottom: 1em;
+}
+.standings-card-last-races {
+	display: flex;
+	flex-direction: column-reverse;
+	/* padding: 0.25em 0; */
+}
+.standings-card-last-races-item:nth-child(odd) {
+	background-color: #e4e4e4;
+}
+.standings-card-last-races-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5em 1em;
+	margin: 0 0.25em 0.25em;
+	text-align: left;
+	border-radius: 10px;
+}
+.standings-card-last-races-item img {
+	max-width: 40px;
+	border-radius: 3px;
+	border: 1px solid #e4e4e4;
+}
+.standings-card-last-races-item h5 {
+	min-width: 60%;
+}
+.standings-card-last-races-item-points {
+	text-align: center;
+}

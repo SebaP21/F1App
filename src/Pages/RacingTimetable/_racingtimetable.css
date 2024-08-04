@@ -1,0 +1,58 @@
+.wrapper {
+	padding: 1em;
+}
+.racing-header {
+	background-color: red;
+	min-height: 10svh;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+.racing-header h2 {
+	padding: 0.5em;
+}
+.racing-buttons-box {
+	background-color: red;
+	display: flex;
+	justify-content: space-evenly;
+	padding-bottom: 1em;
+}
+.racing-buttons-box button {
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 1rem;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+.racing-buttons-box button:hover {
+	color: black;
+}
+.race-title {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+.race-title img {
+	width: 40px;
+}
+.race-time {
+	display: flex;
+	justify-content: space-around;
+}
+.race-time img {
+	max-width: 150px;
+}
+.race-item {
+	background-color: rgb(221, 221, 221);
+	margin: 1em 1em;
+	border-radius: 10px;
+}
+.race-item:first-of-type {
+	background-color: #444444;
+	color: white;
+}
+.race-item:first-of-type p {
+	color: white;
+}

@@ -1,0 +1,98 @@
+.driver-info-wrapper {
+	position: relative;
+	background-image: url("https://running-riversport.com/wp-content/uploads/2022/09/4-Best-F1-tracks.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	padding: 1em 0;
+}
+.driver-info-section-shadow {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.623);
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+.driver-info-wrapper img {
+	max-width: 100%;
+}
+.driver-info-container {
+	background-color: white;
+	max-height: 72svh;
+	margin: 1em 1em 2em 0;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	overflow: hidden;
+	padding: 0.5em 0.5em 0.5em 0;
+	z-index: 10;
+	box-shadow: 0px 0px 8px black;
+}
+.driver-info-title {
+	margin: 0.45em 0.45em 1em 0;
+	padding: 1.5em 0.7em;
+	border-top: 3px solid red;
+	border-right: 3px solid red;
+	border-top-right-radius: 10px;
+}
+.driver-info-cards-box {
+	padding-top: 1em;
+	max-height: 55svh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	/* box-shadow: 0 -5px 5px -5px #333; */
+}
+.driver-info-cards-box::-webkit-scrollbar {
+	background-color: transparent;
+}
+.driver-info-cards-box::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/F1_tire_Pirelli_PZero_Red.svg/2048px-F1_tire_Pirelli_PZero_Red.svg.png");
+	background-size: 1em;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.driver-info-cards-box::-webkit-scrollbar-track {
+	background-color: #e7e7e7;
+	border-radius: 10px;
+}
+.driver-info-card-name {
+	margin: 1em 1em 1em 0;
+	padding: 1em;
+	border-bottom: 3px solid #b8b8b8;
+	border-right: 3px solid #b8b8b8;
+	border-bottom-right-radius: 10px;
+}
+.driver-info-card-avatar {
+	position: relative;
+	display: flex;
+}
+.driver-info-card-avatar img {
+	z-index: 10;
+}
+
+.driver-info-card-shadow-image {
+	position: absolute;
+	background-image: url("https://t3.ftcdn.net/jpg/01/10/30/10/360_F_110301027_a8DJs9rFLQ4hk3LAcEwua1qR9hl9PvEp.jpg");
+	background-position: center;
+	background-size: cover;
+	width: 80%;
+	height: 100%;
+	border-top-right-radius: 10px;
+}
+.driver-info-card-avatar-shadow {
+	position: absolute;
+	background-color: rgba(48, 43, 43, 0.87);
+	width: 80%;
+	height: 100%;
+	border-top-right-radius: 10px;
+}
+.driver-info-card-item {
+	margin-bottom: 2em;
+	transition: transform 0.3s;
+}
+.driver-info-card-item:hover {
+	transform: scale(1.03);
+	cursor: pointer;
+}

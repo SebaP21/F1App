@@ -1,0 +1,120 @@
+.app-wrapper-current {
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 1em 1em 6em;
+}
+.app-wrapper-current h1 {
+	text-align: center;
+	padding: 1em 0;
+}
+.current-event {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-bottom: 1em;
+}
+
+.current-event-title {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+}
+.current-event-title h3 {
+	margin-bottom: 0.5em;
+}
+.current-event h5 {
+	margin-top: 0.5em;
+}
+
+.current-event img {
+	width: 120px;
+}
+.podium-last-events {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	gap: 2px;
+	background-color: #444444;
+	padding-top: 0.7em;
+
+	border-radius: 0 0 10px 10px;
+}
+.current-event-flag {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+.current-event-flag img {
+	max-width: 2em;
+}
+
+.podium-last-events :first-child {
+	order: 1;
+}
+
+.podium-last-events :nth-child(3) {
+	order: 2;
+	background: linear-gradient(180deg, #444444 60%, #b27b5b 40%);
+}
+.podium-last-event-driver:first-of-type {
+	background: linear-gradient(180deg, #444444 25%, rgb(199, 173, 25) 25%);
+	opacity: 0;
+	animation: fade-in 3s forwards;
+	animation-delay: 2s;
+}
+.podium-last-event-driver:nth-of-type(2) {
+	opacity: 0;
+	animation: fade-in 3s forwards;
+	animation-delay: 1s;
+}
+.podium-last-event-driver:last-of-type {
+	opacity: 0;
+	animation: fade-in 3s forwards;
+	/* animation-delay: 1s; */
+}
+.podium-last-event-driver {
+	background: linear-gradient(180deg, #444444 50%, rgb(167, 166, 166) 50%);
+	color: white;
+}
+.podium-last-event-driver:first-of-type img {
+	width: 145px;
+}
+
+.current-event-constructor {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.current-event-constructor img {
+	max-width: 70px;
+}
+.current-event-result-details {
+	display: flex;
+	justify-content: center;
+	padding: 1em 0;
+	text-align: center;
+	overflow: hidden;
+	animation: hight-fade 5s forwards;
+}
+.event-result th {
+	padding: 0.7em;
+	font-weight: bold;
+}
+.event-result td {
+	padding: 0.5em;
+}
+.event-result tbody tr:nth-of-type(even) {
+	background-color: #f0f0f0;
+	margin: 0;
+}
+.event-result tbody tr td:nth-child(2) {
+	text-align: start;
+}
+.current-result-circuit {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 2em;
+}
+.current-result-circuit img {
+	animation: circuit-fade 4s forwards;
+}
