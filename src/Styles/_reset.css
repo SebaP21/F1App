@@ -18,8 +18,8 @@ table{
     }
 }
 
-@media (min-width: 700px) {
-    *{
-        display: none;
-    }
-}
+/*@media (min-width: 700px) {*/
+/*    *{*/
+/*        display: none;*/
+/*    }*/
+/*}*/

@@ -7,6 +7,7 @@ import { TeamLogo } from "../TeamLogos/TeamLogo";
 
 import "./standings.css";
 import { DriverStandingCard } from "./Drivers/DriverStandingsCard/DriverStandingCard";
+import {useQuery} from "@tanstack/react-query";
 
 export type Driver = {
 	driverId: string;
@@ -73,6 +74,8 @@ export const DriverStandings: FC<DriverStandingsProps> = ({
 		});
 	};
 
+	// const {data} = useQuery<>()
+
 	return (
 		<>
 			{driverResults.map((result, index) => (
@@ -126,29 +129,37 @@ export const ConstructorStandings: FC<ConstructorStandingsProps> = ({
 
 export const StandingsResults = () => {
 	const [standings, setStandings] = useState<StandingsTable | null>(null);
-	const [loading, setLoading] = useState(true);
+	// const [loading, setLoading] = useState(true);
 	const [selectResult, setSelectResult] = useState<string>("driverstandings");
 
-	useEffect(() => {
-		let mounted = true;
-		fetch(`http://ergast.com/api/f1/current/${selectResult}.json`)
-			.then((response) => response.json())
-			.then((standings) => {
-				if (!mounted) return;
-				setStandings(standings.MRData.StandingsTable);
-				setLoading(false);
-			});
+	// useEffect(() => {
+	// 	let mounted = true;
+	// 	fetch(`http://ergast.com/api/f1/current/${selectResult}.json`)
+	// 		.then((response) => response.json())
+	// 		.then((standings) => {
+	// 			if (!mounted) return;
+	// 			setStandings(standings.MRData.StandingsTable);
+	// 			setLoading(false);
+	// 		});
+	//
+	// 	return () => {
+	// 		mounted = false;
+	// 	};
+	// }, [selectResult]);
 
-		return () => {
-			mounted = false;
-		};
-	}, [selectResult]);
+	const {data, error, isLoading } = useQuery<{MRData: {StandingsTable: StandingsTable}}>({
+		queryKey: [selectResult],
+		queryFn: () => fetch(`http://ergast.com/api/f1/current/${selectResult}.json`).then(res => res.json())
+	})
 
-	const driverResults = standings?.StandingsLists[0].DriverStandings || [];
+	const driverResults = data?.MRData.StandingsTable?.StandingsLists[0].DriverStandings || [];
 	const constructorResults =
-		standings?.StandingsLists[0].ConstructorStandings || [];
+		data?.MRData.StandingsTable?.StandingsLists[0].ConstructorStandings || [];
 
-	if (!standings) return <p>"Brak danych"</p>;
+
+
+	if (error) return <div>error :(</div>
+
 	return (
 		<section className='app-wrapper standingsTable'>
 			<StandingPageHeader />
@@ -167,7 +178,7 @@ export const StandingsResults = () => {
 				</button>
 			</div>
 
-			{loading ? (
+			{isLoading ? (
 				<p>Loading....</p>
 			) : (
 				<div className='standings'>

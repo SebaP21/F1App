@@ -14,7 +14,7 @@ type DriverInfoCardProps = {
 
 export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 	const [showDetails, setShowDetails] = useState(false);
-
+	console.log("pizda?")
 	return (
 		<>
 			{driver ? (

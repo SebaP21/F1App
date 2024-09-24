@@ -9,6 +9,7 @@ import { DriverHistoricalResults } from "../Classification/Drivers/DriverHistori
 import { DriverCurrentResults } from "../Driver/DriverCurrentResults";
 import { DriverCurrentResultsContext } from "../Context/DriverCurrentResultContext";
 import { CurrentStandingsContext } from "../Context/CurrentStandingsContext";
+import {useDriverQuery} from "../../queries/useDriverQuery";
 
 export type Results = {
 	number: string;
@@ -83,30 +84,35 @@ type DriverDetailsProps = {
 };
 
 export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
-	const [driverInfo, setDriverInfo] = useState<RaceTable>();
+	// const [driverInfo, setDriverInfo] = useState<RaceTable>();
 	const [infoInView, setInfoInView] = useState(true);
 
 	const { setDriverId, currentStanding } = useContext(CurrentStandingsContext);
 
-	useEffect(() => {
-		let mounted = true;
-		fetch(`/api/f1/current/drivers/${driverId}/results.json`)
-			.then((response) => response.json())
-			.then((info) => {
-				if (!mounted) return;
-				setDriverInfo(info.MRData.RaceTable);
-			});
-		return () => {
-			mounted = false;
-			if (driverInfo) {
-				setDriverId(driverInfo.driverId);
-			}
-		};
-	}, [driverId, driverInfo]);
+	// useEffect(() => {
+	// 	console.log("chujenka")
+	// 	let mounted = true;
+	// 	fetch(`/api/f1/current/drivers/${driverId}/results.json`)
+	// 		.then((response) => response.json())
+	// 		.then((info) => {
+	// 			if (!mounted) return;
+	// 			setDriverInfo(info.MRData.RaceTable);
+	// 		});
+	// 	return () => {
+	// 		mounted = false;
+	// 		if (driverInfo) {
+	// 			setDriverId(driverInfo.driverId);
+	// 		}
+	// 	};
+	// }, [driverId, driverInfo]);
 
-	const driver = driverInfo?.Races[0].Results[0].Driver;
-	const constructor = driverInfo?.Races[0].Results[0].Constructor;
-	const results = driverInfo?.Races;
+	const {data} = useDriverQuery(driverId)
+	const RaceTable = data?.MRData?.RaceTable
+	console.log(data)
+
+	const driver = RaceTable?.Races[0].Results[0].Driver;
+	const constructor = RaceTable?.Races[0].Results[0].Constructor;
+	const results = RaceTable?.Races;
 
 	return (
 		<>
@@ -149,23 +155,15 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 						</div>
 						<div className='details-current '>
 							<fieldset className='current-season-box scrollY'>
-								<legend>Season {driverInfo?.season} Results </legend>
+								<legend>Season {RaceTable?.season} Results </legend>
 								<div className='current-season-item-box'>
 									<div>
 										<h5>Points</h5>
-										{!driverInfo ? (
-											<p>Loading....</p>
-										) : (
-											<p>{currentStanding?.points}</p>
-										)}
+										<p>{currentStanding?.points}</p>
 									</div>
 									<div>
 										<h5>Position</h5>
-										{!driverInfo ? (
-											<p>Loading....</p>
-										) : (
-											<p>{currentStanding?.position}</p>
-										)}
+										<p>{currentStanding?.position}</p>
 									</div>
 								</div>
 								<DriverCurrentResults results={results} />

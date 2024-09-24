@@ -21,7 +21,7 @@ export const DriverInfo = () => {
 		};
 	}, []);
 	const currentDrivers = driverInfo?.StandingsLists[0]?.DriverStandings;
-
+	console.log("driverInfo")
 	return (
 		<section className='driver-info-wrapper'>
 			{driverInfo ? (
