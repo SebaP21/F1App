@@ -1,7 +1,7 @@
 import { FC, useContext } from "react";
 import { DriverStanding, StandingsList } from "../../Standings";
 import { DriverAvatarBackground } from "../../../DriverPictures/DriverAvatarBackground";
-import { DriverDetails } from "../../../DriverDetails/DriverDetails";
+// import { DriverDetails } from "../../../DriverDetails/DriverDetails";
 import { DriverCurrentResultsContext } from "../../../Context/DriverCurrentResultContext";
 import { Flag } from "../../../Flags/Flags";
 

@@ -34,6 +34,4 @@ export const Racing = () => {
 	);
 };
 
-{
-	/* <CurrentSchedule /> */
-}
+

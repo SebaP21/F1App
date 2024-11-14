@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Results } from "../Classification/Drivers/CurrentRacesResult/CurrentRacesResult";
+
 
 export type ConstructorProps = {
 	Constructor: string | undefined;

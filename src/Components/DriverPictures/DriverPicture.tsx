@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { DriverAvatarProps } from "../DriverPictures/DriverAvatar";
+// import { DriverAvatarProps } from "../DriverPictures/DriverAvatar";
 
 // export type DriverPictureProps = Pick<DriverAvatarProps, "familyName">;
 

@@ -2,11 +2,8 @@ import { FC, useState } from "react";
 import { DriverStanding } from "../../Classification/Standings";
 import { DriverAvatar } from "../../DriverPictures/DriverAvatar";
 import { DriverDetails } from "../../DriverDetails/DriverDetails";
-import { DriverCurrentResultsContextProvider } from "../../Context/DriverCurrentResultContext";
-import {
-	CurrentStandingsContext,
-	CurrentStandingsContextProvider,
-} from "../../Context/CurrentStandingsContext";
+// import { DriverCurrentResultsContextProvider } from "../../Context/DriverCurrentResultContext";
+import { CurrentStandingsContextProvider } from "../../Context/CurrentStandingsContext";
 
 type DriverInfoCardProps = {
 	driver: DriverStanding | undefined;
@@ -14,7 +11,7 @@ type DriverInfoCardProps = {
 
 export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 	const [showDetails, setShowDetails] = useState(false);
-	console.log("pizda?")
+
 	return (
 		<>
 			{driver ? (

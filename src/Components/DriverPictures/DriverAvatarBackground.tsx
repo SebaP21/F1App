@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from "react";
+import  { FC, PropsWithChildren } from "react";
 import { DriverAvatarProps } from "../DriverPictures/DriverAvatar";
 
 export const DriverAvatarBackground: FC<

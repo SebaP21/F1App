@@ -7,7 +7,7 @@ import { CommonLayout } from "./Layout/CommonLayout";
 import { Racing } from "./Pages/RacingTimetable/RacingTimetable";
 import { StandingsPage } from "./Pages/Standings/StandingsPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Drivers } from "./Pages/Drivers/Drivers";
+// import { Drivers } from "./Pages/Drivers/Drivers";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 const router = createBrowserRouter([

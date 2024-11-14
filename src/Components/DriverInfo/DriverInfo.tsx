@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StandingsResults, StandingsTable } from "../Classification/Standings";
+import { StandingsTable } from "../Classification/Standings";
 import "./driver-info.css";
 import { DriverInfoCard } from "./DriverInfoCard/DriverInfoCard";
 
@@ -21,7 +21,7 @@ export const DriverInfo = () => {
 		};
 	}, []);
 	const currentDrivers = driverInfo?.StandingsLists[0]?.DriverStandings;
-	console.log("driverInfo")
+
 	return (
 		<section className='driver-info-wrapper'>
 			{driverInfo ? (

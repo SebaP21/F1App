@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useContext,  useState } from "react";
 import { DriverPicture } from "../DriverPictures/DriverPicture";
 import { Helmets } from "../Helmets/HelmetsPicture";
 import { CarAvatar } from "../Cars/CarAvatar";
@@ -7,7 +7,7 @@ import { TeamLogo } from "../TeamLogos/TeamLogo";
 import "./driver-details.css";
 import { DriverHistoricalResults } from "../Classification/Drivers/DriverHistoricalResults/DriverHistoricalSeasonReasults";
 import { DriverCurrentResults } from "../Driver/DriverCurrentResults";
-import { DriverCurrentResultsContext } from "../Context/DriverCurrentResultContext";
+// import { DriverCurrentResultsContext } from "../Context/DriverCurrentResultContext";
 import { CurrentStandingsContext } from "../Context/CurrentStandingsContext";
 import {useDriverQuery} from "../../queries/useDriverQuery";
 
@@ -87,7 +87,7 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 	// const [driverInfo, setDriverInfo] = useState<RaceTable>();
 	const [infoInView, setInfoInView] = useState(true);
 
-	const { setDriverId, currentStanding } = useContext(CurrentStandingsContext);
+	const { currentStanding } = useContext(CurrentStandingsContext);
 
 	// useEffect(() => {
 	// 	console.log("chujenka")
