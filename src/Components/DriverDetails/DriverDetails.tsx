@@ -9,7 +9,8 @@ import { DriverHistoricalResults } from "../Classification/Drivers/DriverHistori
 import { DriverCurrentResults } from "../Driver/DriverCurrentResults";
 // import { DriverCurrentResultsContext } from "../Context/DriverCurrentResultContext";
 import { CurrentStandingsContext } from "../Context/CurrentStandingsContext";
-import {useDriverQuery} from "../../queries/useDriverQuery";
+import { useDriverQuery } from "../../queries/useDriverQuery";
+// import {useDriverQuery} from "../../queries/useDriverQuery";
 
 export type Results = {
 	number: string;

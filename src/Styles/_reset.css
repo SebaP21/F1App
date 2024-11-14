@@ -12,11 +12,11 @@ table{
 }
 
 
-@media (min-width: 0px) and (max-width: 599px){
+/* @media (min-width: 0px) and (max-width: 599px){
     *{
         display: none;
     }
-}
+} */
 
 /*@media (min-width: 700px) {*/
 /*    *{*/
