@@ -59,7 +59,7 @@ export const ChooseYourTeam = () => {
 						backgroundImage: f1gif ? `url(${f1gif})` : "none",
 					}}
 				>
-					<div className='relative w-[80%] h-[50svh] bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
+					<div className='relative w-[80%] min-h-[50svh] bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
 						<div
 							className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl`}
 						>
@@ -103,7 +103,7 @@ export const ChooseYourTeam = () => {
 								It is not intended for commercial use.
 							</p>
 						</div>
-						<div className='w-full flex items-center justify-start p-4'>
+						<div className='p-4'>
 							<a
 								className={` text-md font-Formula1-Regular ${styles.reactColor} animate-pulseFast`}
 								href='#chooseyourteam'
