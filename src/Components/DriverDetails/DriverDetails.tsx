@@ -1,4 +1,4 @@
-import { FC, useContext,  useState } from "react";
+import { FC, useContext, useState } from "react";
 import { DriverPicture } from "../DriverPictures/DriverPicture";
 import { Helmets } from "../Helmets/HelmetsPicture";
 import { CarAvatar } from "../Cars/CarAvatar";
@@ -7,10 +7,9 @@ import { TeamLogo } from "../TeamLogos/TeamLogo";
 import "./driver-details.css";
 import { DriverHistoricalResults } from "../Classification/Drivers/DriverHistoricalResults/DriverHistoricalSeasonReasults";
 import { DriverCurrentResults } from "../Driver/DriverCurrentResults";
-// import { DriverCurrentResultsContext } from "../Context/DriverCurrentResultContext";
+
 import { CurrentStandingsContext } from "../Context/CurrentStandingsContext";
 import { useDriverQuery } from "../../queries/useDriverQuery";
-// import {useDriverQuery} from "../../queries/useDriverQuery";
 
 export type Results = {
 	number: string;
@@ -85,31 +84,12 @@ type DriverDetailsProps = {
 };
 
 export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
-	// const [driverInfo, setDriverInfo] = useState<RaceTable>();
 	const [infoInView, setInfoInView] = useState(true);
 
 	const { currentStanding } = useContext(CurrentStandingsContext);
 
-	// useEffect(() => {
-	// 	console.log("chujenka")
-	// 	let mounted = true;
-	// 	fetch(`/api/f1/current/drivers/${driverId}/results.json`)
-	// 		.then((response) => response.json())
-	// 		.then((info) => {
-	// 			if (!mounted) return;
-	// 			setDriverInfo(info.MRData.RaceTable);
-	// 		});
-	// 	return () => {
-	// 		mounted = false;
-	// 		if (driverInfo) {
-	// 			setDriverId(driverInfo.driverId);
-	// 		}
-	// 	};
-	// }, [driverId, driverInfo]);
-
-	const {data} = useDriverQuery(driverId)
-	const RaceTable = data?.MRData?.RaceTable
-	console.log(data)
+	const { data } = useDriverQuery(driverId);
+	const RaceTable = data?.MRData?.RaceTable;
 
 	const driver = RaceTable?.Races[0].Results[0].Driver;
 	const constructor = RaceTable?.Races[0].Results[0].Constructor;

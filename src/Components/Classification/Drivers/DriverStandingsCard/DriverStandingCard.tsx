@@ -53,8 +53,11 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 
 					{expanded && (
 						<div className='standings-card-last-races'>
-							{driverResultsContext?.Races.map((race) => (
-								<div className='standings-card-last-races-item'>
+							{driverResultsContext?.Races.map((race, index) => (
+								<div
+									className='standings-card-last-races-item'
+									key={index}
+								>
 									<Flag country={race.Circuit.Location.country} />
 									<h5>{race.raceName}</h5>
 									<div className='standings-card-last-races-item-points'>

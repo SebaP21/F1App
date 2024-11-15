@@ -1,1 +1,5 @@
-@import url('/src/Styles/style_components.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("/src/Styles/style_components.css");

@@ -52,8 +52,7 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 			});
 	}, []);
 
-	const driverInformation =
-		driverDetails?.StandingsLists[0].DriverStandings[0].Driver;
+	
 	const allSeasons = driverDetails?.StandingsLists;
 
 	return (
@@ -63,7 +62,6 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 					<h5>Season</h5>
 					<h5>Constructor</h5>
 					<h5>Points</h5>
-					{/* <h5>Wins</h5> */}
 					<h5>Position</h5>
 				</div>
 				{allSeasons?.map((result) =>
@@ -76,7 +74,6 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 							<p>
 								{standing.Constructors.map((constructor) => constructor.name)}
 							</p>
-							{/* <p>{standing.wins}</p> */}
 							<p>{standing.points}</p>
 							<p>{standing.position}</p>
 						</div>

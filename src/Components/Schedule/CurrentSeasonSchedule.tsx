@@ -52,6 +52,8 @@ export const CurrentSchedule = () => {
 	const [currentSeason, setCurrentSeason] = useState<RaceTable>();
 	const timeZone = "Europe/Warsaw";
 
+
+
 	useEffect(() => {
 		let mounted = true;
 		fetch("https://ergast.com/api/f1/current.json")
@@ -98,6 +100,10 @@ export const CurrentSchedule = () => {
 						<div>
 							<CircuitsAvatar country={event.Circuit.Location.country} />
 						</div>
+						{/* <div>{event.FirstPractice.date}</div>
+						<div>{event.FirstPractice.time}</div> */}
+						
+						
 					</div>
 				</div>
 			))}

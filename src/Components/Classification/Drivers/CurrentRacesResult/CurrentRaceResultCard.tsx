@@ -25,6 +25,11 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 	const [loading, setLoading] = useState(true);
 	const timeZone = "Europe/Warsaw";
 
+
+
+	//useLastRacesQuery
+
+
 	useEffect(() => {
 		let mounted = true;
 		fetch(`https://ergast.com/api/f1/current/${round}

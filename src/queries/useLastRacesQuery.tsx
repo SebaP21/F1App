@@ -6,11 +6,11 @@ export type PastRaceQueryData = {
 		RaceTable: RaceTable;
 	};
 };
-export const useRaceQuery = (numberOfRace: number | undefined) =>
+export const useRaceQuery = (round: number | undefined) =>
 	useQuery<PastRaceQueryData>({
-		queryKey: [numberOfRace, "past-race-query"],
+		queryKey: [round, "round-race-query"],
 		queryFn: () =>
-			fetch(`/api/f1/current/${numberOfRace}/results.json`).then((response) =>
+			fetch(`/api/f1/current/${round}/results.json`).then((response) =>
 				response.json()
 			),
 	});

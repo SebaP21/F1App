@@ -160,7 +160,7 @@ export const StandingsResults = () => {
 				</button>
 				<button
 					className='select-btn'
-					onClick={() => setSelectResult("constructorStandings")}
+					onClick={() => setSelectResult("constructorstandings")}
 				>
 					Constructors
 				</button>
