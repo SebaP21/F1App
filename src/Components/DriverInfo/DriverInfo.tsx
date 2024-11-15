@@ -9,7 +9,7 @@ export const DriverInfo = () => {
 	const { driverStandings, isLoading, error } = useAppContext();
 
 	useEffect(() => {
-		if (driverStandings.MRData?.StandingsTable) {
+		if (driverStandings?.MRData?.StandingsTable) {
 			setDriverInfo(driverStandings.MRData.StandingsTable);
 		}
 	}, [driverStandings]);

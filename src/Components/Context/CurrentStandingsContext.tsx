@@ -33,7 +33,7 @@ export const CurrentStandingsContextProvider: FC<{ children: ReactNode }> = ({
 			.then((standing) => {
 				if (!mounted) return;
 				setCurrentStanding(
-					standing.MRData.StandingsTable.StandingsLists[0].DriverStandings[0]
+					standing?.MRData?.StandingsTable.StandingsLists[0].DriverStandings[0]
 				);
 			});
 		return () => {

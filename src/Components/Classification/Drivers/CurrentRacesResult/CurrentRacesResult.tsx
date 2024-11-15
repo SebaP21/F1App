@@ -56,7 +56,7 @@ export type RaceTable = {
 export const CurrentRacesResult = () => {
 	const numberOfRaces = Array.from({ length: 24 }, (_, index) => index + 1);
 
-	console.log(numberOfRaces);
+	
 
 	return (
 		<section className='app-wrapper-current'>

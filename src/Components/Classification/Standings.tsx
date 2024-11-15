@@ -131,7 +131,7 @@ export const StandingsResults = () => {
 	}>({
 		queryKey: [selectResult],
 		queryFn: () =>
-			fetch(`http://ergast.com/api/f1/current/${selectResult}.json`).then(
+			fetch(`/api/f1/current/${selectResult}.json`).then(
 				(res) => res.json()
 			),
 	});
