@@ -44,7 +44,7 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 
 	useEffect(() => {
 		let mounted = true;
-		fetch(`/api/f1/drivers/${driverId}/driverStandings.json`)
+		fetch(`https://ergast.com/api/f1/drivers/${driverId}/driverStandings.json`)
 			.then((response) => response.json())
 			.then((driverDetails) => {
 				if (!mounted) return;

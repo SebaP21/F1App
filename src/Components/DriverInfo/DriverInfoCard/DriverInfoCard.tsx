@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { DriverStanding } from "../../Classification/Standings";
 import { DriverAvatar } from "../../DriverPictures/DriverAvatar";
 import { DriverDetails } from "../../DriverDetails/DriverDetails";
+import { CurrentStandingsContextProvider } from "../../Context/CurrentStandingsContext";
 
 type DriverInfoCardProps = {
 	driver: DriverStanding | undefined;
@@ -39,9 +40,9 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 			)}
 			,
 			{showDetails && (
-				// <CurrentStandingsContextProvider>
+				<CurrentStandingsContextProvider>
 				<DriverDetails driverId={driver?.Driver.driverId} />
-				// </CurrentStandingsContextProvider>
+				 </CurrentStandingsContextProvider>
 			)}
 		</>
 	);
