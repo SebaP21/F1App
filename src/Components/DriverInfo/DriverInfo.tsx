@@ -10,7 +10,7 @@ export const DriverInfo = () => {
 
 	useEffect(() => {
 		if (driverStandings?.MRData?.StandingsTable) {
-			setDriverInfo(driverStandings.MRData.StandingsTable);
+			setDriverInfo(driverStandings?.MRData?.StandingsTable);
 		}
 	}, [driverStandings]);
 

@@ -55,9 +55,9 @@ export const CurrentSchedule = () => {
 	const timeZone = "Europe/Warsaw";
 
 	useEffect(() => {
-		if (currentSchedule.MRData.RaceTable) {
-			setCurrentSeason(currentSchedule.MRData.RaceTable);
-			const allEvents = currentSchedule.MRData.RaceTable.Races;
+		if (currentSchedule?.MRData?.RaceTable) {
+			setCurrentSeason(currentSchedule?.MRData?.RaceTable);
+			const allEvents = currentSchedule?.MRData?.RaceTable.Races;
 			const futureEvents = allEvents.filter((currentSchedule: Races) => {
 				const eventDate = dayjs.tz(
 					`${currentSchedule.date}T${currentSchedule.time}`,
