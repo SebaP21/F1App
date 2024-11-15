@@ -47,7 +47,7 @@ export const ChooseYourTeam = () => {
 			className={`${styles.animationWidthTeams} w-full min-h-[100svh] bg-white flex flex-col overflow-x-hidden`}
 		>
 			<div className='w-full flex flex-col min-h-[90svh]'>
-				<div className='w-[100%] flex flex-col min-h-[25svh]   py-10 gap-8 bg-red-700 justify-center'>
+				<div className='w-[100%] flex flex-col min-h-[27svh]   py-10 gap-8 bg-red-700 justify-center'>
 					<h1 className='text-md text-white text-center font-Formula1-Regular'>
 						Welcome in
 					</h1>
