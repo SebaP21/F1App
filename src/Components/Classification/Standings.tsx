@@ -1,11 +1,11 @@
-import { FC, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 import { CarAvatar } from "../Cars/CarAvatar";
 import { TeamLogo } from "../TeamLogos/TeamLogo";
 
 import "./standings.css";
 import { DriverStandingCard } from "./Drivers/DriverStandingsCard/DriverStandingCard";
-import { useQuery } from "@tanstack/react-query";
+
 import { useAppContext } from "../Context/AppContext";
 import { AnimatedHeader } from "../../Pages/Test/AnimatedHeader";
 
@@ -43,13 +43,13 @@ export type StandingsTable = {
 	StandingsLists: StandingsList[];
 };
 
-type DriverStandingsProps = {
-	driverResults: DriverStanding[];
-};
+// type DriverStandingsProps = {
+// 	driverResults: DriverStanding[];
+// };
 
-type ConstructorStandingsProps = {
-	constructorResults: DriverStanding[];
-};
+// type ConstructorStandingsProps = {
+// 	constructorResults: DriverStanding[];
+// };
 
 const StandingPageHeader = () => {
 	return (
@@ -127,7 +127,7 @@ export const ConstructorStandings = () => {
 		if (constructorStandings?.MRData?.StandingsTable) {
 			setConstructorData(constructorStandings?.MRData?.StandingsTable);
 		}
-	});
+	},[constructorStandings.MRData.StandingsTable]);
 
 	if (error) {
 		return (
