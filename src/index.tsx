@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AnimatedHeader } from "./Pages/Test/AnimatedHeader";
 import { AppProvider } from "./Components/Context/AppContext";
+import { ChooseYourTeam } from "./Pages/Test/AnimationWithTeams/AnimationWithTeams";
 
 const router = createBrowserRouter([
 	{
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/test",
-				element: <AnimatedHeader />,
+				element: <ChooseYourTeam />,
 			},
 		],
 	},
