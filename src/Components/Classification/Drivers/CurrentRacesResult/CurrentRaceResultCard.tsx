@@ -9,7 +9,7 @@ import timezone from "dayjs/plugin/timezone";
 import "./currentRacesResult.css";
 import { AnimatedHeader } from "../../../../Pages/Test/AnimatedHeader";
 import { useRaceQuery } from "../../../../queries/useLastRacesQuery";
-import { RaceTable } from "./CurrentRacesResult"; // Typ danych
+
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
