@@ -47,14 +47,14 @@ export const ChooseYourTeam = () => {
 			className={`${styles.animationWidthTeams} w-full min-h-[100svh] bg-white flex flex-col overflow-x-hidden`}
 		>
 			<div className='w-full flex flex-col min-h-[100svh]'>
-				<div className='w-[100%] flex flex-col min-h-[40svh]   py-16 gap-20 bg-red-700 justify-center'>
+				<div className='w-[100%] flex flex-col min-h-[30svh]   py-16 gap-20 bg-red-700 justify-center'>
 					<h1 className='text-md text-white text-center font-Formula1-Regular'>
 						Welcome in
 					</h1>
 					<h1 className='text-4xl text-center text-white'>F1 App</h1>
 				</div>
 				<div
-					className='w-full min-h-[60svh]  bg-no-repeat bg-cover flex justify-end items-center'
+					className='w-full min-h-[70svh]  bg-no-repeat bg-cover flex justify-end items-center'
 					style={{
 						backgroundImage: f1gif ? `url(${f1gif})` : "none",
 					}}
