@@ -47,12 +47,14 @@ export const ChooseYourTeam = () => {
 						Welcome in
 					</h1>
 					<h1 className='text-4xl text-center text-white'>F1 App</h1>
-					<div className='w-[90%] mx-auto text-center animate-fadeUp'>
+					<div className='w-[90%] mx-auto text-center animate-fadeUp flex flex-col gap-2'>
 						<p className=' text-white text-md font-Formula1-Regular'>
 							Developed out of a passion for Formula 1 and a love for creating
-							with React, this application was built as a hobby project. It is
-							not intended for commercial use.
+							with React.  
 						</p>
+                        <p className="text-white text-md font-Formula1-Regular">This application was built as a hobby project.</p>
+                        <p className="text-white text-md font-Formula1-Regular">It is
+                        not intended for commercial use.</p>
 					</div>
 				</div>
 				<div className='w-[90%] min-h-[40svh] flex flex-col gap-8 pb-12'>
