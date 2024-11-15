@@ -3,3 +3,14 @@
     position: absolute;
     top: 0;
 }
+
+.radioItems {
+    z-index: 110000;
+}
+.reactColor {
+    color: #66dbfb;
+}
+.borderBottomReact {
+    border-bottom: 2px;
+    border-color: #66dbfb;
+}
