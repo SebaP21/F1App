@@ -62,7 +62,7 @@ export const CurrentRacesResult = () => {
 		<section className='app-wrapper-current'>
 			{numberOfRaces.map((round) => (
 				<div key={round}>
-					<CurrentRacesResultCard round={round} />
+					<CurrentRacesResultCard round={round.toString()} />
 				</div>
 			))}
 			<h1>Last results</h1>

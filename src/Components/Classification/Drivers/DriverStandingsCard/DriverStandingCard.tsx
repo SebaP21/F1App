@@ -1,7 +1,7 @@
 import { FC, useContext } from "react";
 import { DriverStanding, StandingsList } from "../../Standings";
 import { DriverAvatarBackground } from "../../../DriverPictures/DriverAvatarBackground";
-// import { DriverDetails } from "../../../DriverDetails/DriverDetails";
+
 import { DriverCurrentResultsContext } from "../../../Context/DriverCurrentResultContext";
 import { Flag } from "../../../Flags/Flags";
 
@@ -78,12 +78,4 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 	);
 };
 
-// {expanded && (
-// 	<div className='standings-card'>
-// 		{driverResultsContext?.Races.map((race) => (
-// 			<>
-// 				<h5>{race.raceName}</h5>
-// 				<p> POS{race.Results[0].position}</p>
-// 				<p>PTS{race.Results[0].points}</p>
-// 			</>
-// 		))}
+

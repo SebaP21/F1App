@@ -4,6 +4,7 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { Flag } from "../Flags/Flags";
 import { CircuitsAvatar } from "../Circuits/CircuitsAvatar";
+import { useAppContext } from "../Context/AppContext";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -50,28 +51,43 @@ type Races = {
 
 export const CurrentSchedule = () => {
 	const [currentSeason, setCurrentSeason] = useState<RaceTable>();
+	const { currentSchedule, isLoading, error } = useAppContext();
 	const timeZone = "Europe/Warsaw";
 
-
-
 	useEffect(() => {
-		let mounted = true;
-		fetch("https://ergast.com/api/f1/current.json")
-			.then((response) => response.json())
-			.then((events) => {
-				if (!mounted) return;
-				const allEvents = events.MRData.RaceTable.Races;
-				const futureEvents = allEvents.filter((event: Races) => {
-					const eventDate = dayjs.tz(`${event.date}T${event.time}`, "UTC");
-					const now = dayjs();
-					return eventDate.isAfter(now);
-				});
-				setCurrentSeason({ ...events.MRData.RaceTable, Races: futureEvents });
+		if (currentSchedule.MRData.RaceTable) {
+			setCurrentSeason(currentSchedule.MRData.RaceTable);
+			const allEvents = currentSchedule.MRData.RaceTable.Races;
+			const futureEvents = allEvents.filter((currentSchedule: Races) => {
+				const eventDate = dayjs.tz(
+					`${currentSchedule.date}T${currentSchedule.time}`,
+					"UTC"
+				);
+				const now = dayjs();
+				return eventDate.isAfter(now);
 			});
-		return () => {
-			mounted = false;
-		};
-	}, []);
+			setCurrentSeason({
+				...currentSchedule.MRData.RaceTable,
+				Races: futureEvents,
+			});
+		}
+	}, [currentSchedule]);
+
+	if (error) {
+		return (
+			<div>
+				<p>{error.message}</p>
+			</div>
+		);
+	}
+
+	if (isLoading) {
+		return (
+			<div>
+				<p>Ładowanie...</p>
+			</div>
+		);
+	}
 
 	const timeToTimeZone = (date: string, time: string) => {
 		const eventDate = dayjs.tz(`${date}T${time}`, "UTC");
@@ -100,10 +116,49 @@ export const CurrentSchedule = () => {
 						<div>
 							<CircuitsAvatar country={event.Circuit.Location.country} />
 						</div>
-						{/* <div>{event.FirstPractice.date}</div>
-						<div>{event.FirstPractice.time}</div> */}
-						
-						
+					</div>
+					<div className="flex gap-4">
+					<div>
+						<h4>Qualifying</h4>
+						<p>
+							{timeToTimeZone(event.Qualifying.date, event.Qualifying.time)}
+						</p>
+					</div>
+					{event.Sprint?.date && (
+						<div>
+							<h4>Sprint</h4>
+							<p>{timeToTimeZone(event.Sprint.date, event.Sprint.time)}</p>
+						</div>
+					)}
+					{event.ThirdPractice?.date && (
+						<div>
+							<h4>3rd Practice</h4>
+							<p>
+								{timeToTimeZone(
+									event.ThirdPractice.date,
+									event.ThirdPractice.time
+								)}
+							</p>
+						</div>
+					)}
+					<div>
+						<h4>2nd Practice</h4>
+						<p>
+							{timeToTimeZone(
+								event.SecondPractice.date,
+								event.SecondPractice.time
+							)}
+						</p>
+					</div>
+					<div>
+						<h4>1st Practice</h4>
+						<p>
+							{timeToTimeZone(
+								event.FirstPractice.date,
+								event.FirstPractice.time
+							)}
+						</p>
+					</div>
 					</div>
 				</div>
 			))}

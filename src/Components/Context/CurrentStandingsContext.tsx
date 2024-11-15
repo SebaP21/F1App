@@ -7,7 +7,7 @@ import {
 	useState,
 	createContext,
 } from "react";
-import { DriverStanding, StandingsTable } from "../Classification/Standings";
+import { DriverStanding } from "../Classification/Standings";
 
 type CurrentStandingsContextState = {
 	driverId: string;
