@@ -42,7 +42,7 @@ export const ChooseYourTeam = () => {
 			className={`${styles.animationWidthTeams} w-full min-h-[100svh] bg-white flex flex-col overflow-x-hidden`}
 		>
 			<div className='w-[100%]  flex flex-col justify-start items-center gap-8'>
-				<div className='w-[100%] flex flex-col  py-16 gap-6 bg-red-700'>
+				<div className='w-[100%] flex flex-col min-h-[60svh] py-16 gap-6 bg-red-700 justify-center'>
 					<h1 className='text-md text-white text-center font-Formula1-Regular'>
 						Welcome in
 					</h1>
@@ -62,7 +62,7 @@ export const ChooseYourTeam = () => {
 						squad!
 					</p>
 					<fieldset className='border-t-2 border-r-2 w-full border-red-700 rounded-tr-lg flex flex-col gap-2 pr-4 shadow-lg'>
-						<legend className='mx-4 px-2 font-semibold text-md text-gray-400 font-Formula1-Bold'>
+						<legend className='mx-4 px-2 font-semibold text-md  font-Formula1-Bold'>
 							Teams
 						</legend>
 
