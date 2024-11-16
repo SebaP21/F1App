@@ -72,7 +72,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 		<>
 			{currentStandings?.map((result, index) => (
 				<div
-					className='transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer  '
+					className='transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 '
 					key={index}
 					onClick={handleDetailsClick}
 					ref={ref}
