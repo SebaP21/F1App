@@ -35,11 +35,11 @@ export const DriverInfo = () => {
 	const currentDrivers = driverInfo?.StandingsLists[0]?.DriverStandings;
 
 	return (
-		<section className='relative w-full flex flex-col '>
-			<div className='relative z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'>
+		<section className=' w-full flex flex-col '>
+			<div className=' z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'>
 				<h2 className='max-w-[90%] text-center'>Current Season Drivers</h2>
 			</div>
-			<div className='relative z-10 w-full'>
+			<div className='relative z-10 w-full flex'>
 				<div
 					style={{
 						backgroundImage: backgroundImage
@@ -50,7 +50,7 @@ export const DriverInfo = () => {
 				>
 					<div className='w-[95%] flex z-10 rounded-tr-xl rounded-br-xl bg-white pt-4 pb-2 -mt-[8svh]'>
 						{currentDrivers && (
-							<div className='driver-info-cards-box w-[97%] relative max-h-[60svh] overflow-y-scroll overflow-x-hidden z-10 bg-white pt-8 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-xl gap-4'>
+							<div className='driver-info-cards-box w-[97%] relative h-[60svh] overflow-y-scroll  z-10 bg-white pt-8 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-xl gap-4'>
 								{currentDrivers.map((driver) => (
 									<DriverInfoCard
 										driver={driver}

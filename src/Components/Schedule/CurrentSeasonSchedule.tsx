@@ -53,6 +53,7 @@ export const CurrentSchedule = () => {
 	const [currentSeason, setCurrentSeason] = useState<RaceTable>();
 	const { currentSchedule, isLoading, error } = useAppContext();
 	const timeZone = "Europe/Warsaw";
+	
 
 	useEffect(() => {
 		if (currentSchedule?.MRData?.RaceTable) {
@@ -98,68 +99,75 @@ export const CurrentSchedule = () => {
 
 	return (
 		<section className='app-wrapper'>
-			{eventSchedule?.map((event) => (
+			{eventSchedule?.map((event, index) => (
 				<div
-					className='wrapper race-item'
+					className='wrapper race-item flex flex-col gap-4'
 					key={event.time + event.Circuit.circuitId}
 				>
-					<div className='race-title'>
-						<h3>{event.raceName}</h3>
-						<Flag country={event.Circuit.Location.country} />
+					<div
+						className='flex flex-col gap-4 cursor-pointer'
+						
+					>
+						<div className='race-title'>
+							<h3>{event.raceName}</h3>
+							<Flag country={event.Circuit.Location.country} />
+						</div>
+						<div className='race-time'>
+							<div>
+								<p>{event.Circuit.Location.locality}</p>
+								<p>{event.Circuit.circuitName}</p>
+								<h5>{timeToTimeZone(event.date, event.time)}</h5>
+							</div>
+							<div>
+								<CircuitsAvatar country={event.Circuit.Location.country} />
+							</div>
+						</div>
 					</div>
-					<div className='race-time'>
-						<div>
-							<p>{event.Circuit.Location.locality}</p>
-							<p>{event.Circuit.circuitName}</p>
-							<h5>{timeToTimeZone(event.date, event.time)}</h5>
-						</div>
-						<div>
-							<CircuitsAvatar country={event.Circuit.Location.country} />
-						</div>
-					</div>
-					<div className="flex gap-4">
-					<div>
-						<h4>Qualifying</h4>
-						<p>
-							{timeToTimeZone(event.Qualifying.date, event.Qualifying.time)}
-						</p>
-					</div>
-					{event.Sprint?.date && (
-						<div>
-							<h4>Sprint</h4>
-							<p>{timeToTimeZone(event.Sprint.date, event.Sprint.time)}</p>
-						</div>
-					)}
-					{event.ThirdPractice?.date && (
-						<div>
-							<h4>3rd Practice</h4>
-							<p>
-								{timeToTimeZone(
-									event.ThirdPractice.date,
-									event.ThirdPractice.time
-								)}
-							</p>
-						</div>
-					)}
-					<div>
-						<h4>2nd Practice</h4>
-						<p>
-							{timeToTimeZone(
-								event.SecondPractice.date,
-								event.SecondPractice.time
+					
+						<div className='flex flex-col gap-4  text-center'>
+							<div>
+								<h4>Qualifying</h4>
+								<p>
+									{timeToTimeZone(event.Qualifying.date, event.Qualifying.time)}
+								</p>
+							</div>
+							{event.Sprint?.date && (
+								<div>
+									<h4>Sprint</h4>
+									<p>{timeToTimeZone(event.Sprint.date, event.Sprint.time)}</p>
+								</div>
 							)}
-						</p>
-					</div>
-					<div>
-						<h4>1st Practice</h4>
-						<p>
-							{timeToTimeZone(
-								event.FirstPractice.date,
-								event.FirstPractice.time
+							{event.ThirdPractice?.date && (
+								<div>
+									<h4>3rd Practice</h4>
+									<p>
+										{timeToTimeZone(
+											event.ThirdPractice.date,
+											event.ThirdPractice.time
+										)}
+									</p>
+								</div>
 							)}
-						</p>
-					</div>
-					</div>
+							<div>
+								<h4>2nd Practice</h4>
+								<p>
+									{timeToTimeZone(
+										event.SecondPractice.date,
+										event.SecondPractice.time
+									)}
+								</p>
+							</div>
+							<div>
+								<h4>1st Practice</h4>
+								<p>
+									{timeToTimeZone(
+										event.FirstPractice.date,
+										event.FirstPractice.time
+									)}
+								</p>
+							</div>
+						</div>
+					
 				</div>
 			))}
 		</section>

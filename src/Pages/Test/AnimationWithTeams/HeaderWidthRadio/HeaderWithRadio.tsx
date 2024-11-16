@@ -21,9 +21,10 @@ export const HeaderWidthRadio = () => {
 			>
 				<div className='relative w-[80%] min-h-[50svh] bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
 					<div
-						className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl`}
+						className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl gap-4`}
 					>
-						<h5 className='text-white'>Team Radio</h5>
+						<h5 className='text-white'>Team Radio</h5>{" "}
+						<div className='text-dynamic border border-dynamic  rounded-full flex justify-center items-center animate-pulseFast text-xl w-[35px]'>•</div>
 					</div>
 					<div
 						className={`w-full flex justify-between items-center py-4  border-b-2 `}
@@ -53,14 +54,14 @@ export const HeaderWidthRadio = () => {
 					</div>
 					<div className='max-w-[70%] self-end text-right py-6 mr-2'>
 						<p className=' text-white text-md font-Formula1-Regular'>
-							Developed out of a passion for Formula 1 and a love for creating
+							" Developed out of a passion for Formula 1 and a love for creating
 							with React.
 						</p>
 						<p className='text-white text-md font-Formula1-Regular'>
 							This application was built as a hobby project.
 						</p>
 						<p className='text-white text-md font-Formula1-Regular'>
-							It is not intended for commercial use.
+							It is not intended for commercial use."
 						</p>
 					</div>
 					<div className='p-4'>
@@ -76,4 +77,3 @@ export const HeaderWidthRadio = () => {
 		</div>
 	);
 };
-
