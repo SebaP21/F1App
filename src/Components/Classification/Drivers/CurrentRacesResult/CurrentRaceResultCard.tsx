@@ -10,6 +10,7 @@ import "./currentRacesResult.css";
 import { AnimatedHeader } from "../../../../Pages/Test/AnimatedHeader";
 import { useRaceQuery } from "../../../../queries/useLastRacesQuery";
 import useIntersectionObserver from "../../../../hooks/useIntersectionObserver";
+import { AnimationForRacing } from "../../../../Pages/Test/AnimationForRacing/AnimationForRacing";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -59,7 +60,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 	}, [isIntersecting]);
 
 	if (isLoading) {
-		return <AnimatedHeader />;
+		return <AnimationForRacing />;
 	}
 
 	if (error) {
@@ -72,7 +73,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 		<>
 			{currentStandings?.map((result, index) => (
 				<div
-					className='transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 '
+					className={` transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 `}
 					key={index}
 					onClick={handleDetailsClick}
 					ref={ref}

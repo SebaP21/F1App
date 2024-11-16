@@ -12,6 +12,7 @@ import { AnimatedHeader } from "./Pages/Test/AnimatedHeader";
 import { AppProvider } from "./Components/Context/AppContext";
 import { ChooseYourTeam } from "./Pages/Test/AnimationWithTeams/AnimationWithTeams";
 import { TeamProvider } from "./Components/Context/TeamContext";
+import { AnimationForRacing } from "./Pages/Test/AnimationForRacing/AnimationForRacing";
 
 const router = createBrowserRouter([
 	{
@@ -27,10 +28,10 @@ const router = createBrowserRouter([
 				path: "/standings",
 				element: <StandingsPage />,
 			},
-			// {
-			// 	path: "/test",
-			// 	element: <ChooseYourTeam />,
-			// },
+			{
+				path: "/test",
+				element: <AnimationForRacing />,
+			},
 		],
 	},
 ]);
