@@ -11,6 +11,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AnimatedHeader } from "./Pages/Test/AnimatedHeader";
 import { AppProvider } from "./Components/Context/AppContext";
 import { ChooseYourTeam } from "./Pages/Test/AnimationWithTeams/AnimationWithTeams";
+import { TeamProvider } from "./Components/Context/TeamContext";
 
 const router = createBrowserRouter([
 	{
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
 				path: "/standings",
 				element: <StandingsPage />,
 			},
-			{
-				path: "/test",
-				element: <ChooseYourTeam />,
-			},
+			// {
+			// 	path: "/test",
+			// 	element: <ChooseYourTeam />,
+			// },
 		],
 	},
 ]);
@@ -41,11 +42,13 @@ const queryClient = new QueryClient();
 
 root.render(
 	<React.StrictMode>
-		<QueryClientProvider client={queryClient}>
-			<AppProvider> 
-				<RouterProvider router={router} />
-			</AppProvider>
-		</QueryClientProvider>
+		<TeamProvider>
+			<QueryClientProvider client={queryClient}>
+				<AppProvider>
+					<RouterProvider router={router} />
+				</AppProvider>
+			</QueryClientProvider>
+		</TeamProvider>
 	</React.StrictMode>
 );
 

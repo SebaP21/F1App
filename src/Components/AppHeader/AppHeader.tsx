@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom"
+import { useTeamContext } from "../Context/TeamContext"
+import { useEffect } from "react";
 
 
 
 export const AppHeader = () => {
+
+    const {teamColor} = useTeamContext()
+
+    useEffect(() => {
+        if (teamColor) {
+          document.documentElement.style.setProperty('--team-color', teamColor);
+        }
+      }, [teamColor]);
+
     return(
-        <section className="app-header">
+        <section className="w-full min-h-[10svh] bg-dynamic flex items-center justify-center">
             
-                <Link to='/'>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/F1_%28white%29.svg/1280px-F1_%28white%29.svg.png" alt="" />
+                <Link to='/'
+                className="w-[30%]"
+                >
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/F1_%28white%29.svg/1280px-F1_%28white%29.svg.png" alt="" 
+                className=""
+                />
                 </Link>
 
 
