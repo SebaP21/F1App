@@ -56,26 +56,27 @@ export type RaceTable = {
 
 export const CurrentRacesResult = () => {
 	const numberOfRaces = Array.from({ length: 24 }, (_, index) => index + 1);
-	const [showDetails, setShowDetails] = useState<number | undefined>();
-
+	const [showDetails, setShowDetails] = useState<number | null>(null);
+  
 	const handleShowDetails = (round: number) => {
-		setShowDetails((prev) => (prev === round ? undefined : round));
+	  setShowDetails((prev) => (prev === round ? null : round));
 	};
-
+  
 	return (
-		<section className='w-full min-h-[80svh] flex flex-col items-center pt-8 pb-[15svh]'>
-			<div className='w-[90%] flex flex-col gap-6'>
-				<h1 className='text-center'>Last results</h1>
-				{numberOfRaces.map((round) => (
-					<div key={round}>
-						<CurrentRacesResultCard
-							round={round.toString()}
-							showDetails={showDetails}
-							onShowDetails={handleShowDetails}
-						/>
-					</div>
-				))}
+	  <section className="w-full min-h-[80svh] flex flex-col items-center pt-8 pb-[10svh]">
+		<div className="w-[90%] flex flex-col gap-6">
+		  <h1 className="text-center">Last results</h1>
+		  {numberOfRaces.map((round) => (
+			<div key={round}>
+			  <CurrentRacesResultCard
+				round={round.toString()}
+				showDetails={showDetails}
+				onShowDetails={handleShowDetails}
+			  />
 			</div>
-		</section>
+		  ))}
+		</div>
+	  </section>
 	);
-};
+  };
+  

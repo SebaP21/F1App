@@ -16,25 +16,23 @@ dayjs.extend(timezone);
 
 export type CurrentRacesResultCardProps = {
 	round: string;
-	showDetails: number | undefined;
+	showDetails: number | null;
 	onShowDetails: (round: number) => void;
 };
 
 export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 	round,
+	showDetails,
+	onShowDetails,
 }) => {
-	const [showDetails, setShowDetails] = useState<number>();
-
 	const { isIntersecting, ref } = useIntersectionObserver({ threshold: 0.8 });
 
 	const timeZone = "Europe/Warsaw";
 
 	const { data, isLoading, error } = useRaceQuery(round);
 
-	const handleDetails = (props: string | number) => {
-		const roundNumber = typeof props === "string" ? Number(props) : props;
-
-		setShowDetails(roundNumber === showDetails ? undefined : roundNumber);
+	const handleDetailsClick = () => {
+		onShowDetails(Number(round));
 	};
 
 	const timeToTimeZone = (date: string, time: string) => {
@@ -75,14 +73,14 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 			{currentStandings?.map((result, index) => (
 				<div
 					className='transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer  '
-					ref={ref}
 					key={index}
-					onClick={() => handleDetails(result.round)}
+					onClick={handleDetailsClick}
+					ref={ref}
 				>
 					<div>
 						<div className='w-full flex justify-between px-4 pt-4 pb-2'>
 							<h4>{result.Circuit.Location.country}</h4>
-							<div className='w-[40px] rounded-md overflow-hidden'>
+							<div className='w-[40px] rounded-md overflow-hidden border border-black flex'>
 								<Flag country={result.Circuit.Location.country} />
 							</div>
 						</div>
@@ -158,9 +156,9 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 					<div
 						className={`${
 							showDetails === Number(result.round)
-								? "max-h-[2500px] opacity-100 p-4 mt-4"
-								: "max-h-0 opacity-0"
-						}  w-full flex transition-all ease-in-out `}
+								? "max-h-[1500px] opacity-100 p-4 mt-4"
+								: "max-h-0 opacity-0 "
+						}  w-full flex transition-all ease-in-out overflow-hidden `}
 					>
 						<table className='w-full text-center '>
 							<thead>
