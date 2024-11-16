@@ -24,7 +24,7 @@ export const HeaderWidthRadio = () => {
 						className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl gap-4`}
 					>
 						<h5 className='text-white'>Team Radio</h5>{" "}
-						<div className='text-dynamic border border-dynamic  rounded-full flex justify-center items-center animate-pulseFast text-xl w-[22px] h-[22px]'>•</div>
+						<div className='text-dynamic border-4 border-dynamic  rounded-full flex justify-center items-center animate-pulseFast text-xl w-[15px] h-[15px]'></div>
 					</div>
 					<div
 						className={`w-full flex justify-between items-center py-4  border-b-2 `}
