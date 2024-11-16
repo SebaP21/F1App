@@ -96,7 +96,7 @@ export const CurrentSchedule = () => {
 	};
 
 	return (
-		<section className='w-full min-h-[80svh] flex justify-center pt-8 pb-[12svh]'>
+		<section className='w-full min-h-[80svh] flex justify-center pt-8 pb-[15svh]'>
 			<div className='w-[90%]  flex flex-col gap-6 '>
 				{eventSchedule &&
 					eventSchedule.map((data, index) => (
