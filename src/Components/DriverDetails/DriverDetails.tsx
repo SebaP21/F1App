@@ -99,34 +99,54 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 		<>
 			{infoInView && (
 				<section>
-					<div className='driver-details-wrapper'>
-						<div className='driver-details-image'>
+					<div 
+					className='driver-details-wrapper'
+					>
+						<div 
+						className='driver-details-image'
+						>
 							<DriverPicture familyName={driver?.familyName} />
 							<button onClick={() => setInfoInView(false)}>X</button>
 						</div>
-						<div className='driver-details-info'>
-							<div className='driver-details-name'>
+						<div 
+						className='driver-details-info'
+						>
+							<div 
+							className='driver-details-name'
+							>
 								<h2>{driver?.givenName}</h2>
 								<h2>{driver?.familyName}</h2>
 							</div>
-							<div className='driver-details-helmet'>
+							<div 
+							className='driver-details-helmet'
+							>
 								<Helmets familyName={driver?.familyName} />
 							</div>
-							<div className='driver-details-permanent-number'>
+							<div 
+							className='driver-details-permanent-number'
+							>
 								<h2>{driver?.permanentNumber}</h2>
 							</div>
 						</div>
-						<div className='driver-details-info'>
-							<div className='driver-details-birth'>
+						<div 
+						className='driver-details-info'
+						>
+							<div 
+							className='driver-details-birth'
+							>
 								<h5>Date of birth</h5>
 								<p>{driver?.dateOfBirth}</p>
 							</div>
-							<div className='driver-details-birth'>
+							<div 
+							className='driver-details-birth'
+							>
 								<h5>Nationality</h5>
 								<p>{driver?.nationality}</p>
 							</div>
 						</div>
-						<div className='details-current'>
+						<div 
+						className='details-current'
+						>
 							<fieldset>
 								<legend>Team</legend>
 								<CarAvatar Constructor={constructor?.name} />
@@ -134,8 +154,11 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 								<TeamLogo Constructor={constructor?.name} />
 							</fieldset>
 						</div>
-						<div className='details-current '>
-							<fieldset className='current-season-box scrollY'>
+						<div 
+						// className='details-current '
+						>
+							<fieldset 
+							className='current-season-box scrollY'>
 								<legend>Season {RaceTable?.season} Results </legend>
 								<div className='current-season-item-box'>
 									<div>

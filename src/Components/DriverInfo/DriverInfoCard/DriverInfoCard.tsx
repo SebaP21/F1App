@@ -16,16 +16,24 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 			{driver ? (
 				<div
 					key={driver.Driver.driverId + driver.Driver.dateOfBirth}
-					className='driver-info-card-item'
+					className='driver-info-card-item  max-w-[98%] '
 					onClick={() => setShowDetails((prev) => !prev)}
 				>
-					<div className='driver-info-card-avatar'>
+					<div 
+					className='driver-info-card-avatar'
+					>
 						<DriverAvatar
 							givenName={driver.Driver.givenName}
 							familyName={driver.Driver.familyName}
 						/>
-						<div className='driver-info-card-shadow-image'></div>
-						<div className='driver-info-card-avatar-shadow'></div>
+						<div 
+						className='driver-info-card-shadow-image'
+						></div>
+						<div 
+						className='driver-info-card-avatar-shadow'
+						>
+
+						</div>
 					</div>
 					<div className='driver-info-card-name'>
 						<h3>
@@ -38,7 +46,7 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 					<p>Loading....</p>
 				</div>
 			)}
-			,
+			
 			{showDetails && (
 				<CurrentStandingsContextProvider>
 				<DriverDetails driverId={driver?.Driver.driverId} />

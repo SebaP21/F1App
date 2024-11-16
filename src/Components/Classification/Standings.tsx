@@ -53,7 +53,9 @@ export type StandingsTable = {
 
 const StandingPageHeader = () => {
 	return (
-		<section className='racing-header'>
+		<section 
+		className='relative z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'
+		>
 			<h2>Standings</h2>
 		</section>
 	);
@@ -191,7 +193,10 @@ export const StandingsResults = () => {
 	return (
 		<section className='app-wrapper standingsTable'>
 			<StandingPageHeader />
-			<div className='buttons-wrapper'>
+			<div 
+			// className='buttons-wrapper'
+			className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'
+			>
 				<button
 					className='select-btn'
 					onClick={() => setSelectResult("driverstandings")}
