@@ -186,7 +186,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 								: "max-h-0 opacity-0 "
 						}  w-full flex transition-all ease-in-out overflow-hidden `}
 					>
-						<table className='w-[100%] text-center mx-auto'>
+						<table className='w-[100%] text-center mx-auto overflow-x-scroll'>
 							<thead>
 								<tr>
 									<th>POS.</th>
@@ -207,7 +207,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 											{data.Driver.familyName}
 										</td>
 										<td>
-											<div className='my-2 max-w-[50px] rounded-lg overflow-hidden mx-auto ml-1'>
+											<div className='my-2 max-w-[50px] rounded-lg overflow-hidden mx-auto ml-1 border'>
 												<TeamLogo Constructor={data.Constructor.name} />
 											</div>
 										</td>
