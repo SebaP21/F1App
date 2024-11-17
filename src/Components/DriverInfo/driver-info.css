@@ -1,4 +1,4 @@
-.driver-info-wrapper {
+/* .driver-info-wrapper {
 	position: relative;
 	background-image: url("https://running-riversport.com/wp-content/uploads/2022/09/4-Best-F1-tracks.jpg");
 	background-position: center;
@@ -7,8 +7,8 @@
 	display: flex;
 	flex-direction: column;
 	padding: 1em 0;
-}
-.driver-info-section-shadow {
+} */
+/* .driver-info-section-shadow {
 	position: absolute;
 	background-color: rgba(0, 0, 0, 0.623);
 	width: 100%;
@@ -28,14 +28,14 @@
 	padding: 0.5em 0.5em 0.5em 0;
 	z-index: 10;
 	box-shadow: 0px 0px 8px black;
-}
-.driver-info-title {
+} */
+/* .driver-info-title {
 	margin: 0.45em 0.45em 1em 0;
 	padding: 1.5em 0.7em;
 	border-top: 3px solid red;
 	border-right: 3px solid red;
 	border-top-right-radius: 10px;
-}
+} */
 /* .driver-info-cards-box {
 	padding-top: 1em;
 	max-height: 55svh;
@@ -43,21 +43,38 @@
 	overflow-x: hidden;
 	box-shadow: 0 -5px 5px -5px #333;
 } */
-.driver-info-cards-box::-webkit-scrollbar {
+
+.driver-info-cards-box {
+	direction: rtl;
+	overflow-y: scroll;
+	height: 50vh;
+  }
+  .driver-info-cards-box > * {
+	direction: ltr; 
+  }
+
+  .driver-info-cards-box::-webkit-scrollbar {
 	background-color: transparent;
-}
-.driver-info-cards-box::-webkit-scrollbar-thumb {
+	width: 20px;
+	
+	
+  }
+  
+  .driver-info-cards-box::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/F1_tire_Pirelli_PZero_Red.svg/2048px-F1_tire_Pirelli_PZero_Red.svg.png");
-	background-size: 1em;
+	background-size: 20px;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-.driver-info-cards-box::-webkit-scrollbar-track {
-	background-color: #e7e7e7;
-	border-radius: 10px;
-}
-.driver-info-card-name {
+  }
+  
+  .driver-info-cards-box::-webkit-scrollbar-track {
+	background-color: #E5E7EB;
+	border-radius: 8px;
+	
+  }
+  
+/* .driver-info-card-name {
 	margin: 1em 1em 1em 0;
 	padding: 1em;
 	border-bottom: 3px solid #b8b8b8;
@@ -80,8 +97,8 @@
 	width: 80%;
 	height: 100%;
 	border-top-right-radius: 10px;
-}
-.driver-info-card-avatar-shadow {
+} */
+/* .driver-info-card-avatar-shadow {
 	position: absolute;
 	background-color: rgba(48, 43, 43, 0.87);
 	width: 80%;
@@ -96,3 +113,8 @@
 	transform: scale(1.02);
 	cursor: pointer;
 }
+
+.scroll-left {
+	direction: rtl;
+	text-align: left;
+  } */

@@ -4,6 +4,8 @@ import { DriverAvatar } from "../../DriverPictures/DriverAvatar";
 import { DriverDetails } from "../../DriverDetails/DriverDetails";
 import { CurrentStandingsContextProvider } from "../../Context/CurrentStandingsContext";
 
+import driversBgc from "../../../Assets/Pictures/driversBgc.jpg";
+
 type DriverInfoCardProps = {
 	driver: DriverStanding | undefined;
 };
@@ -16,26 +18,21 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 			{driver ? (
 				<div
 					key={driver.Driver.driverId + driver.Driver.dateOfBirth}
-					className='driver-info-card-item  max-w-[98%] '
+					className=' max-w-[96%]  flex flex-col gap-6 '
 					onClick={() => setShowDetails((prev) => !prev)}
 				>
-					<div 
-					className='driver-info-card-avatar'
+					<div
+						className='w-[97%] rounded-tr-3xl rounded-br-3xl'
+						style={{
+							backgroundImage: driversBgc ? `url(${driversBgc})` : "none",
+						}}
 					>
 						<DriverAvatar
 							givenName={driver.Driver.givenName}
 							familyName={driver.Driver.familyName}
 						/>
-						<div 
-						className='driver-info-card-shadow-image'
-						></div>
-						<div 
-						className='driver-info-card-avatar-shadow'
-						>
-
-						</div>
 					</div>
-					<div className='driver-info-card-name'>
+					<div className='w-[98%] pb-2  border-b-[3px]   border-dynamic  text-center'>
 						<h3>
 							{driver.Driver.givenName} {driver.Driver.familyName}
 						</h3>
@@ -46,11 +43,11 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 					<p>Loading....</p>
 				</div>
 			)}
-			
+
 			{showDetails && (
 				<CurrentStandingsContextProvider>
-				<DriverDetails driverId={driver?.Driver.driverId} />
-				 </CurrentStandingsContextProvider>
+					<DriverDetails driverId={driver?.Driver.driverId} />
+				</CurrentStandingsContextProvider>
 			)}
 		</>
 	);
