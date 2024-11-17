@@ -32,7 +32,7 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 							familyName={driver.Driver.familyName}
 						/>
 					</div>
-					<div className='w-[98%] pb-2  border-b-[3px]   border-dynamic  text-center'>
+					<div className='w-[97%]  pb-2  border-b-[3px]   border-grey-200  text-center '>
 						<h3>
 							{driver.Driver.givenName} {driver.Driver.familyName}
 						</h3>
