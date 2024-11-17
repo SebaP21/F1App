@@ -6,7 +6,7 @@ export const DriverAvatarBackground: FC<
 > = ({ givenName, familyName, children }) => {
 	return (
 		<div
-			className='driver-standings-image'
+			className='min-w-[100px] w-full h-full  min-h-[100px] bg-cover flex justify-end items-end'
 			style={{
 				backgroundImage: `url(https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/${givenName.substring(
 					0,

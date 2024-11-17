@@ -11,7 +11,7 @@ export const AnimatedHeader = () => {
 	}, [teamColor]);
 
 	return (
-		<div className='absolute top-0 bg-dynamic w-full min-h-[100svh] flex justify-center items-center '>
+		<div className='fixed top-0 left-0 bg-dynamic w-full min-h-[100svh] flex justify-center items-center '>
 			<div className='w-[50%] animate-spin-smooth flex justify-center items-center'>
 				<img
 					src='https://tyre-assets.pirelli.com/staticfolder/Tyre/resources/img/white-parentesi.png'

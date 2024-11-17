@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { CarAvatar } from "../Cars/CarAvatar";
 import { TeamLogo } from "../TeamLogos/TeamLogo";
@@ -43,20 +43,10 @@ export type StandingsTable = {
 	StandingsLists: StandingsList[];
 };
 
-// type DriverStandingsProps = {
-// 	driverResults: DriverStanding[];
-// };
-
-// type ConstructorStandingsProps = {
-// 	constructorResults: DriverStanding[];
-// };
-
 const StandingPageHeader = () => {
 	return (
-		<section 
-		className='relative z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'
-		>
-			<h2>Standings</h2>
+		<section className='relative z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'>
+			<h2 className='max-w-[90%] text-center'>Standings</h2>
 		</section>
 	);
 };
@@ -92,9 +82,7 @@ export const DriverStandings = () => {
 
 	if (isLoading) {
 		return (
-			<div>
-				<p>Ładowanie...</p>
-			</div>
+			<AnimatedHeader/>
 		);
 	}
 
@@ -129,7 +117,7 @@ export const ConstructorStandings = () => {
 		if (constructorStandings?.MRData?.StandingsTable) {
 			setConstructorData(constructorStandings?.MRData?.StandingsTable);
 		}
-	},[constructorStandings.MRData.StandingsTable]);
+	}, [constructorStandings.MRData.StandingsTable]);
 
 	if (error) {
 		return (
@@ -157,7 +145,9 @@ export const ConstructorStandings = () => {
 			) : (
 				constructorResults.map((result) => (
 					<div key={result.Constructor?.constructorId}>
-						<div className='standings-card constructor-cards'>
+						<div 
+						className='standings-card constructor-cards'
+						>
 							<div className='standing-cards-wrapper'>
 								<div className='standings-position'>
 									<h2>{result.position}</h2>
@@ -190,34 +180,43 @@ export const ConstructorStandings = () => {
 export const StandingsResults = () => {
 	const [selectResult, setSelectResult] = useState<string>("driverstandings");
 
-	return (
-		<section className='app-wrapper standingsTable'>
-			<StandingPageHeader />
-			<div 
-			// className='buttons-wrapper'
-			className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'
-			>
-				<button
-					className='select-btn'
-					onClick={() => setSelectResult("driverstandings")}
-				>
-					Drivers
-				</button>
-				<button
-					className='select-btn'
-					onClick={() => setSelectResult("constructorstandings")}
-				>
-					Constructors
-				</button>
-			</div>
+	const driverstandings =
+		selectResult === "driverstandings"
+			? "transition-all text-black hover:text-white"
+			: "text-white hover:text-black";
 
-			<div className='standings'>
-				{selectResult === "driverstandings" ? (
-					<DriverStandings />
-				) : (
-					<ConstructorStandings />
-				)}
-			</div>
-		</section>
+	const constructorstandings =
+		selectResult === "constructorstandings"
+			? "transition-all text-black hover:text-white"
+			: "text-white hover:text-black";
+
+	return (
+		<>
+			<StandingPageHeader />
+			<section className=''>
+				<div className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'>
+					<button
+						className={driverstandings}
+						onClick={() => setSelectResult("driverstandings")}
+					>
+						Drivers
+					</button>
+					<button
+						className={constructorstandings}
+						onClick={() => setSelectResult("constructorstandings")}
+					>
+						Constructors
+					</button>
+				</div>
+
+				<div className='w-full flex flex-col gap-4 pt-8 pb-[10svh]'>
+					{selectResult === "driverstandings" ? (
+						<DriverStandings />
+					) : (
+						<ConstructorStandings />
+					)}
+				</div>
+			</section>
+		</>
 	);
 };
