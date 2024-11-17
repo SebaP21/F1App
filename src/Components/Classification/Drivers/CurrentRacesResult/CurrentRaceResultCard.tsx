@@ -182,11 +182,11 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 					<div
 						className={`${
 							showDetails === Number(result.round)
-								? "max-h-[1500px] opacity-100 p-4 mt-4"
+								? "max-h-[1500px] opacity-100 p-1 mt-4"
 								: "max-h-0 opacity-0 "
 						}  w-full flex transition-all ease-in-out overflow-hidden `}
 					>
-						<table className='w-[95%] text-center mx-auto'>
+						<table className='w-[100%] text-center mx-auto'>
 							<thead>
 								<tr>
 									<th>POS.</th>
