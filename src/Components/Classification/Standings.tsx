@@ -81,9 +81,7 @@ export const DriverStandings = () => {
 	}
 
 	if (isLoading) {
-		return (
-			<AnimatedHeader/>
-		);
+		return <AnimatedHeader />;
 	}
 
 	const driverResults = driverInfo?.StandingsLists[0]?.DriverStandings;
@@ -130,7 +128,7 @@ export const ConstructorStandings = () => {
 	if (isLoading) {
 		return (
 			<div>
-				<p>Ładowanie...</p>
+				<AnimatedHeader />
 			</div>
 		);
 	}
@@ -144,29 +142,27 @@ export const ConstructorStandings = () => {
 				<AnimatedHeader />
 			) : (
 				constructorResults.map((result) => (
-					<div key={result.Constructor?.constructorId}>
-						<div 
-						className='standings-card constructor-cards'
-						>
-							<div className='standing-cards-wrapper'>
-								<div className='standings-position'>
+					<div
+						className='w-full flex flex-col'
+						key={result.Constructor?.constructorId}
+					>
+						<div className='w-[95%] flex-col rounded-r-xl  bg-gray-200 items-center'>
+							<div className='w-full flex items-center justify-between gap-6 px-2 pt-4 standing-cards-wrapper'>
+								<div className='flex min-w-[15%] min-h-[6svh] items-center justify-center border-r-2 border-gray-500'>
 									<h2>{result.position}</h2>
 								</div>
-								<div className='constructor-standings-name'>
+								<div>
 									<h3>{result.Constructor?.name}</h3>
 								</div>
-								{/*  */}
-								<div className='team-standings-image'>
+								<div className='max-w-[25%] rounded-lg overflow-hidden '>
 									<TeamLogo Constructor={result.Constructor?.name} />
 								</div>
-								<div>
-									<div className='team-standings-points'>
-										<h4>{result.points}</h4>
-										<p>PTS</p>
-									</div>
+								<div className='bg-gray-300 px-4  rounded-xl text-center'>
+									<h4>{result.points}</h4>
+									<p>PTS</p>
 								</div>
 							</div>
-							<div className='standings-car-animation'>
+							<div className='max-w-[40%] standings-car-animation mx-auto pt-4 pb-2'>
 								<CarAvatar Constructor={result.Constructor?.name} />
 							</div>
 						</div>
@@ -176,6 +172,36 @@ export const ConstructorStandings = () => {
 		</>
 	);
 };
+
+// constructorResults.map((result) => (
+// 	<div key={result.Constructor?.constructorId}>
+// 		<div
+// 		className='standings-card constructor-cards'
+// 		>
+// 			<div className='standing-cards-wrapper'>
+// 				<div className='standings-position'>
+// 					<h2>{result.position}</h2>
+// 				</div>
+// 				<div className='constructor-standings-name'>
+// 					<h3>{result.Constructor?.name}</h3>
+// 				</div>
+// 				{/*  */}
+// 				<div className='team-standings-image'>
+// 					<TeamLogo Constructor={result.Constructor?.name} />
+// 				</div>
+// 				<div>
+// 					<div className='team-standings-points'>
+// 						<h4>{result.points}</h4>
+// 						<p>PTS</p>
+// 					</div>
+// 				</div>
+// 			</div>
+// 			<div className='standings-car-animation'>
+// 				<CarAvatar Constructor={result.Constructor?.name} />
+// 			</div>
+// 		</div>
+// 	</div>
+// ))
 
 export const StandingsResults = () => {
 	const [selectResult, setSelectResult] = useState<string>("driverstandings");

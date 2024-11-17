@@ -4,7 +4,7 @@ import { DriverAvatarBackground } from "../../../DriverPictures/DriverAvatarBack
 
 import { DriverCurrentResultsContext } from "../../../Context/DriverCurrentResultContext";
 import { Flag } from "../../../Flags/Flags";
-import { DriverAvatar } from "../../../DriverPictures/DriverAvatar";
+// import { DriverAvatar } from "../../../DriverPictures/DriverAvatar";
 
 type DriverStandingCardProps = {
 	result: DriverStanding;
@@ -19,7 +19,7 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 	expanded,
 	expand,
 }) => {
-	const { setSelectDriver, driverResultsContext } = useContext(
+	const {  driverResultsContext } = useContext(
 		DriverCurrentResultsContext
 	);
 

@@ -112,7 +112,8 @@
 	animation: car-to-center 3s forwards;
 }
 .standings-position,
-.team-standings-points {
+.team-standings-points
+ {
 	animation: position-fade-down 3s forwards;
 	animation-delay: 5s;
 }
