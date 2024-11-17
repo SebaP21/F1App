@@ -205,7 +205,7 @@ export const StandingsResults = () => {
 					</button>
 				</div>
 
-				<div className='w-full flex flex-col gap-4 pt-8 pb-[10svh]'>
+				<div className='w-full flex flex-col gap-4 pt-8 pb-[13svh]'>
 					{selectResult === "driverstandings" ? (
 						<DriverStandings />
 					) : (
