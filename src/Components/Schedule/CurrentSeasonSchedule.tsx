@@ -83,7 +83,7 @@ export const CurrentSchedule = () => {
 
 	if (isLoading) {
 		return (
-			<div>
+			<div className="p-5">
 				<p>Ładowanie...</p>
 			</div>
 		);

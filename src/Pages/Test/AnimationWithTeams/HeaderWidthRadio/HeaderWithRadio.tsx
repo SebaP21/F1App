@@ -6,20 +6,20 @@ import reactLogo from "../../../../Assets/Icons/logo.svg";
 
 export const HeaderWidthRadio = () => {
 	return (
-		<div className='w-full flex flex-col min-h-[90svh]'>
-			<div className='w-[100%] flex flex-col min-h-[27svh]   py-10 gap-8 bg-[#e80020] justify-center'>
+		<div className='w-full flex flex-col min-h-[95svh]'>
+			<div className='w-[100%] flex flex-col min-h-[20svh]   py-10 gap-8 bg-[#e80020] justify-center'>
 				<h1 className='text-md text-white text-center font-Formula1-Regular '>
 					Welcome in
 				</h1>
 				<h1 className='text-4xl text-center text-white'>F1 App</h1>
 			</div>
 			<div
-				className='w-full min-h-[70svh]  bg-no-repeat bg-cover flex justify-end items-center'
+				className='w-full min-h-[70svh]   bg-no-repeat bg-cover flex justify-end items-center py-8'
 				style={{
 					backgroundImage: f1gif ? `url(${f1gif})` : "none",
 				}}
 			>
-				<div className='relative w-[80%] min-h-[50svh] bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
+				<div className='relative w-[80%]  bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
 					<div
 						className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl gap-4`}
 					>
@@ -64,7 +64,7 @@ export const HeaderWidthRadio = () => {
 							It is not intended for commercial use."
 						</p>
 					</div>
-					<div className='p-4'>
+					<div className='pl-4 pb-2'>
 						<a
 							className={` text-md font-Formula1-Regular ${styles.reactColor} animate-pulseFast`}
 							href='#chooseyourteam'
