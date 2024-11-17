@@ -37,8 +37,8 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 						<h2>{result.position}</h2>
 					</div>
 					<div className='flex flex-col'>
-						<h5>{result.Driver.givenName}</h5>
-						<h3 className='font-Formula1-Bold text-sm'>
+						<h5 >{result.Driver.givenName}</h5>
+						<h3 >
 							{result.Driver.familyName}
 						</h3>
 					</div>
