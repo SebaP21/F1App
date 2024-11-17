@@ -7,7 +7,6 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import "./currentRacesResult.css";
-import { AnimatedHeader } from "../../../../Pages/Test/AnimatedHeader";
 import { useRaceQuery } from "../../../../queries/useLastRacesQuery";
 import useIntersectionObserver from "../../../../hooks/useIntersectionObserver";
 import { AnimationForRacing } from "../../../../Pages/Test/AnimationForRacing/AnimationForRacing";
@@ -42,6 +41,30 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 	};
 
 	const [animateStep, setAnimateStep] = useState<number>(0);
+	const [showAnimation, setShowAnimation] = useState(true);
+
+	useEffect(() => {
+		let timeout: NodeJS.Timeout;
+
+		if (isLoading) {
+			setShowAnimation(true);
+			const animationDuration = 3000;
+
+			timeout = setTimeout(() => {
+				setShowAnimation(false);
+			}, animationDuration);
+		} else {
+			if (showAnimation) {
+				timeout = setTimeout(() => {
+					setShowAnimation(false);
+				}, 3000);
+			} else {
+				setShowAnimation(false);
+			}
+		}
+
+		return () => clearTimeout(timeout);
+	}, [isLoading]);
 
 	useEffect(() => {
 		if (isIntersecting) {
@@ -59,7 +82,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 		}
 	}, [isIntersecting]);
 
-	if (isLoading) {
+	if (showAnimation) {
 		return <AnimationForRacing />;
 	}
 
@@ -73,7 +96,9 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 		<>
 			{currentStandings?.map((result, index) => (
 				<div
-					className={` transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 `}
+					className={`${
+						showDetails === Number(result.round) && "hover:scale-105 my-6"
+					} transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 hover:scale-105 `}
 					key={index}
 					onClick={handleDetailsClick}
 					ref={ref}
@@ -161,7 +186,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 								: "max-h-0 opacity-0 "
 						}  w-full flex transition-all ease-in-out overflow-hidden `}
 					>
-						<table className='w-full text-center '>
+						<table className='w-[95%] text-center mx-auto'>
 							<thead>
 								<tr>
 									<th>POS.</th>
@@ -182,12 +207,12 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 											{data.Driver.familyName}
 										</td>
 										<td>
-											<div className='my-2 max-w-[50px] rounded-lg overflow-hidden mx-auto'>
+											<div className='my-2 max-w-[50px] rounded-lg overflow-hidden mx-auto ml-1'>
 												<TeamLogo Constructor={data.Constructor.name} />
 											</div>
 										</td>
-										<td>{data.points}</td>
-										<td>{data.status}</td>
+										<td className='text-sm'>{data.points}</td>
+										<td className='text-sm'>{data.status}</td>
 									</tr>
 								))}
 							</tbody>

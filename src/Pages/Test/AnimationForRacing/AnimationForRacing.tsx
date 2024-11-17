@@ -6,7 +6,7 @@ import developerImage from "../../../Assets/Pictures/Clipped_image_20241115_2038
 export const AnimationForRacing = () => {
 	return (
 		<section
-			className={`${styles.animationForRacing} w-full min-h-[100svh] bg-dynamic absolute top-0  flex justify-end items-center overflow-hidden transition-all mx-auto`}
+			className={`${styles.animationForRacing} w-full min-h-[100svh] bg-dynamic fixed top-0 left-0 flex justify-end items-center overflow-hidden transition-all mx-auto`}
 		>
 			<div className='  min-h-[60svh] w-full flex flex-col justify-between items-center'>
 				<div className='w-[50%] min-h-[40svh] animate-spin-smooth flex justify-center items-center'>
