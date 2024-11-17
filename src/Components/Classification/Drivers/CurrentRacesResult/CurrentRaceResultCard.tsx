@@ -97,7 +97,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 			{currentStandings?.map((result, index) => (
 				<div
 					className={`${
-						showDetails === Number(result.round) && "hover:scale-105 my-6"
+						showDetails === Number(result.round) && " scale:105 my-6"
 					} transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 hover:scale-105 `}
 					key={index}
 					onClick={handleDetailsClick}
@@ -124,11 +124,11 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 								<CircuitsAvatar country={result.Circuit.Location.country} />
 							</div>
 						</div>
-						<div className='w-full min-h-[22svh] grid grid-cols-3 gap-1 bg-gray-600 mt-2 rounded-br-xl rounded-bl-xl '>
+						<div className='w-full min-h-[25svh] grid grid-cols-3 gap-1 bg-gray-600 mt-2 rounded-br-xl rounded-bl-xl '>
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 2 ? "min-h-[12svh]" : "min-h-0"
+										animateStep >= 2 ? "min-h-[15svh]" : "min-h-0"
 									} flex justify-center items-center bg-slate-300 rounded-bl-xl rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[95%] -mt-[8svh] flex flex-col gap-2 text-center'>
@@ -145,7 +145,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 1 ? "min-h-[14svh]" : "min-h-0"
+										animateStep >= 3 ? "min-h-[20svh]" : "min-h-0"
 									} flex justify-center items-center bg-amber-500 rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[100%]  -mt-[9svh] flex flex-col gap-2 text-center'>
@@ -162,7 +162,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 3 ? "min-h-[9svh]" : "min-h-0"
+										animateStep >= 1 ? "min-h-[12svh]" : "min-h-0"
 									} flex justify-center items-center bg-amber-700 rounded-br-xl rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[95%] -mt-[8svh] flex flex-col gap-2 text-center'>

@@ -49,7 +49,7 @@
 
 @keyframes wrapper-fade-up {
 	0% {
-		transform: translateY(25%);
+		transform: translateY(35%);
 	}
 	60% {
 		transform: translateY(0%);

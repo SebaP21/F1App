@@ -96,13 +96,13 @@
 }
 
 .standing-cards-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+	/* display: flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	/* width: 100%; */
 	animation: wrapper-fade-up 3s 1s forwards;
 	/* animation-delay: 1s; */
-	transform: translateY(25%);
+	transform: translateY(35%);
 }
 .constructor-cards {
 	display: flex;

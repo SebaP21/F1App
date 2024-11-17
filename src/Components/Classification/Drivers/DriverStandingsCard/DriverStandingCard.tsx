@@ -19,9 +19,7 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 	expanded,
 	expand,
 }) => {
-	const {  driverResultsContext } = useContext(
-		DriverCurrentResultsContext
-	);
+	const { driverResultsContext } = useContext(DriverCurrentResultsContext);
 
 	return (
 		<div className='w-full flex flex-col '>
@@ -29,7 +27,7 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 				key={index}
 				onClick={expand}
 				className={`transition-all ${
-					expanded ? "w-[92%]" : "w-[90%]"
+					expanded ? "w-[90%]" : "w-[88%]"
 				}  min-h-[17svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer `}
 			>
 				<div className='w-full flex items-center justify-between  gap-4'>
@@ -37,10 +35,8 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 						<h2>{result.position}</h2>
 					</div>
 					<div className='flex flex-col'>
-						<h5 >{result.Driver.givenName}</h5>
-						<h3 >
-							{result.Driver.familyName}
-						</h3>
+						<h5>{result.Driver.givenName}</h5>
+						<h3>{result.Driver.familyName}</h3>
 					</div>
 					<div className='min-w-[40%] h-[100%] flex'>
 						<DriverAvatarBackground
