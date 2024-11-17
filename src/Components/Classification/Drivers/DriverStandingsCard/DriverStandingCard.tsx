@@ -24,13 +24,13 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 	);
 
 	return (
-		<div className='w-full flex flex-col'>
+		<div className='w-full flex flex-col '>
 			<div
 				key={index}
 				onClick={expand}
 				className={`transition-all ${
 					expanded ? "w-[92%]" : "w-[90%]"
-				}  min-h-[17svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer border border-black`}
+				}  min-h-[17svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer `}
 			>
 				<div className='w-full flex items-center justify-between  gap-4'>
 					<div className='flex min-w-[15%] h-[7svh] items-center justify-center border-r-2 border-gray-500'>
