@@ -63,7 +63,7 @@ export const CurrentRacesResult = () => {
 	};
   
 	return (
-	  <section className="w-full min-h-[80svh] flex flex-col items-center pt-8 pb-[10svh]">
+	  <section className="w-full min-h-[80svh] flex flex-col items-center pt-8 pb-[15svh]">
 		<div className="w-[90%] flex flex-col gap-2">
 		  <h1 className="text-center">Last results</h1>
 		  {numberOfRaces.slice().reverse().map((round) => (
