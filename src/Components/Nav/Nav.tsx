@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Nav = () => {
 	return (
-		<div className='w-full flex justify-evenly items-center fixed bottom-0 bg-white min-h-[9svh] z-50 border-t-[1px] border-black shadow-xl'>
+		<div className='w-full flex justify-evenly items-center fixed bottom-0 bg-white min-h-[10svh] z-50 border-t-[1px] border-black shadow-xl'>
 			<Link to='/'>
 				<div className='transition-all flex flex-col items-center gap-1 hover:scale-105 '>
 					<img
