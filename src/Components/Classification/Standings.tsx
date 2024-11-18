@@ -83,8 +83,7 @@ export const DriverStandings = () => {
 	if (isLoading) {
 		return (
 			<div>
-				{" "}
-				<p>Loading...</p>
+				<AnimatedHeader />
 			</div>
 		);
 	}
@@ -94,7 +93,9 @@ export const DriverStandings = () => {
 	return (
 		<>
 			{!driverResults ? (
-				<AnimatedHeader />
+				<div>
+					<p>Loading...</p>
+				</div>
 			) : (
 				driverResults.map((result, index) => (
 					<DriverStandingCard
@@ -131,12 +132,7 @@ export const ConstructorStandings = () => {
 	}
 
 	if (isLoading) {
-		return (
-			<div>
-				{" "}
-				<p>Loading...</p>
-			</div>
-		);
+		return <AnimatedHeader />;
 	}
 
 	const constructorResults =
@@ -145,7 +141,9 @@ export const ConstructorStandings = () => {
 	return (
 		<>
 			{!constructorResults ? (
-				<AnimatedHeader />
+				<div>
+					<p>Loading...</p>
+				</div>
 			) : (
 				constructorResults.map((result) => (
 					<div
