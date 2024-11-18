@@ -108,7 +108,7 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 		<>
 			{infoInView && (
 				<section
-					className='fixed inset-0 top-[9svh] z-50 driver-details-card bg-white text-white flex flex-col mx-auto rounded-3xl mb-[11svh]'
+					className='fixed inset-0 top-[5svh] z-50 driver-details-card bg-white text-white flex flex-col mx-auto rounded-3xl mb-[13svh]'
 					style={{ width: "95vw" }}
 				>
 					<div>
