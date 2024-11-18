@@ -57,20 +57,20 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 
 	return (
 		<>
-			<div className='all-seasons-table'>
-				<div className='all-seasons-thead'>
+			<div className='w-full flex flex-col gap-2 text-md max-h-[40svh] driver-info-cards-box '>
+				<div className='w-[95%] flex justify-between'>
 					<h5>Season</h5>
 					<h5>Constructor</h5>
-					<h5>Points</h5>
-					<h5>Position</h5>
+					<h5>PTS</h5>
+					<h5>POS</h5>
 				</div>
 				{allSeasons?.map((result) =>
 					result.DriverStandings.map((standing) => (
 						<div
 							key={`${result.season}-${standing.Driver.driverId}`}
-							className='all-seasons-tbody'
+							className='w-[97%] flex justify-between even:bg-gray-200 even:rounded-md px-2 py-4'
 						>
-							<p>{result.season}</p>
+							<p className="">{result.season}</p>
 							<p>
 								{standing.Constructors.map((constructor) => constructor.name)}
 							</p>
