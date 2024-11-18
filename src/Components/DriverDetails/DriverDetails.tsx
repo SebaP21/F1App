@@ -171,7 +171,7 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 										<p>{currentStanding?.position}</p>
 									</div>
 								</div>
-								<div className="w-full flex flex-col gap-2 max-h-[40svh] driver-info-cards-box pl-2 ">
+								<div className="w-full flex flex-col gap-2  ">
 								<DriverCurrentResults results={results}/>
 								</div>
 							</fieldset>

@@ -57,8 +57,8 @@ export const DriverHistoricalResults: FC<DriverIdProps> = ({ driverId }) => {
 
 	return (
 		<>
-			<div className='w-full flex flex-col gap-2 text-md max-h-[40svh] driver-info-cards-box '>
-				<div className='w-[95%] flex justify-between'>
+			<div className='w-full flex flex-col gap-2 text-md  '>
+				<div className='w-[95%] flex justify-between pt-2 pb-4'>
 					<h5>Season</h5>
 					<h5>Constructor</h5>
 					<h5>PTS</h5>
