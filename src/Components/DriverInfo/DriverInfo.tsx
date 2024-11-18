@@ -51,7 +51,7 @@ export const DriverInfo = () => {
 				>
 					<div className='w-[95%] flex z-10 rounded-tr-3xl rounded-br-3xl  pt-4 pb-4 pr-3 bg-white -mt-[10svh]'>
 						{currentDrivers && (
-							<div className='driver-info-cards-box w-[97%] relative min-h-[60svh] overflow-y-scroll ml-2 flex flex-col  gap-8 z-10  pr-2 pt-4 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-3xl  '>
+							<div className='driver-info-cards-box w-[97%] h-[50svh] relative min-h-[60svh] overflow-y-scroll ml-2 flex flex-col  gap-8 z-10  pr-2 pt-4 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-3xl  '>
 								{currentDrivers.map((driver) => (
 									<DriverInfoCard
 										driver={driver}

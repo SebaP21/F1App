@@ -25,7 +25,7 @@
 .driver-info-cards-box {
 	direction: rtl;
 	overflow-y: scroll;
-	height: 50vh;
+	
 }
 .driver-info-cards-box > * {
 	direction: ltr;
