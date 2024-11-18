@@ -4,7 +4,11 @@ import f1gif from "../../../../Assets/gif/giphy.webp";
 import developerImage from "../../../../Assets/Pictures/Clipped_image_20241115_203837.png";
 import reactLogo from "../../../../Assets/Icons/logo.svg";
 
-export const HeaderWidthRadio = () => {
+export const HeaderWidthRadio = ({
+	scrollToTeamSection,
+}: {
+	scrollToTeamSection: () => void;
+}) => {
 	return (
 		<div className='w-full flex flex-col min-h-[95svh]'>
 			<div className='w-[100%] flex flex-col min-h-[20svh]   py-10 gap-8 bg-[#e80020] justify-center'>
@@ -64,13 +68,13 @@ export const HeaderWidthRadio = () => {
 							It is not intended for commercial use."
 						</p>
 					</div>
-					<div className='pl-4 pb-2'>
-						<a
+					<div className='pl-4 pb-4'>
+						<button
 							className={` text-md font-Formula1-Regular ${styles.reactColor} animate-pulseFast`}
-							href='#chooseyourteam'
+							onClick={scrollToTeamSection}
 						>
 							COPY?
-						</a>
+						</button>
 					</div>
 				</div>
 			</div>

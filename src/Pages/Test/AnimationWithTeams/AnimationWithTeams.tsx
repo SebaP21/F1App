@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { StandingsTable } from "../../../Components/Classification/Standings";
 import { useAppContext } from "../../../Components/Context/AppContext";
 import styles from "./animationWithTeams.module.css";
@@ -24,6 +24,14 @@ export const ChooseYourTeam: React.FC<ChooseYourTeamProps> = ({
 		StandingsTable | undefined
 	>();
 	const [isExiting, setIsExiting] = useState(false);
+
+	const teamSectionRef = useRef<HTMLDivElement>(null);
+
+	const scrollToTeamSection = () => {
+		if (teamSectionRef.current) {
+			teamSectionRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	};
 
 	useEffect(() => {
 		if (constructorStandings?.MRData?.StandingsTable) {
@@ -70,11 +78,11 @@ export const ChooseYourTeam: React.FC<ChooseYourTeamProps> = ({
 				<div
 					className={`${styles.animationWidthTeams} w-full min-h-[100svh] bg-white flex flex-col overflow-x-hidden`}
 				>
-					<HeaderWidthRadio />
+					<HeaderWidthRadio scrollToTeamSection={scrollToTeamSection} />
 
 					<div
 						className='w-[90%] min-h-[95svh] flex flex-col gap-8 pb-12  py-12 justify-center mx-auto'
-						id='chooseyourteam'
+						ref={teamSectionRef}
 					>
 						<p>
 							{" "}
