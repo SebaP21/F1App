@@ -81,7 +81,12 @@ export const DriverStandings = () => {
 	}
 
 	if (isLoading) {
-		return <AnimatedHeader />;
+		return (
+			<div>
+				{" "}
+				<p>Loading...</p>
+			</div>
+		);
 	}
 
 	const driverResults = driverInfo?.StandingsLists[0]?.DriverStandings;
@@ -128,7 +133,8 @@ export const ConstructorStandings = () => {
 	if (isLoading) {
 		return (
 			<div>
-				<AnimatedHeader />
+				{" "}
+				<p>Loading...</p>
 			</div>
 		);
 	}
