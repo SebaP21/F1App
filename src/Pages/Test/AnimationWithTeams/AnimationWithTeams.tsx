@@ -81,7 +81,7 @@ export const ChooseYourTeam: React.FC<ChooseYourTeamProps> = ({
 					<HeaderWidthRadio scrollToTeamSection={scrollToTeamSection} />
 
 					<div
-						className='w-[90%] min-h-[95svh] flex flex-col gap-8 pb-12  py-12 justify-center mx-auto'
+						className='w-[90%] min-h-[95svh] flex flex-col gap-8 pb-12  py-12 justify-center mx-auto md:w-[70%] lg:w-[60%] xl:w-[900px]'
 						ref={teamSectionRef}
 					>
 						<p>

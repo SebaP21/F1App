@@ -12,7 +12,7 @@ const RacingPageHeader = () => {
 };
 
 export const Racing = () => {
-	const [selectCathegory, setSelectCathegory] = useState("upcoming");
+	const [selectCathegory, setSelectCathegory] = useState("past");
 
 	const upcoming =
 		selectCathegory === "upcoming"
@@ -30,16 +30,16 @@ export const Racing = () => {
 			<section>
 				<div className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'>
 					<button
-						onClick={() => setSelectCathegory("upcoming")}
-						className={upcoming}
-					>
-						Upcoming
-					</button>
-					<button
 						onClick={() => setSelectCathegory("past")}
 						className={past}
 					>
 						Past
+					</button>
+					<button
+						onClick={() => setSelectCathegory("upcoming")}
+						className={upcoming}
+					>
+						Upcoming
 					</button>
 				</div>
 				{selectCathegory === "upcoming" ? (

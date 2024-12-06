@@ -36,11 +36,12 @@ export const DriverInfo = () => {
 	const currentDrivers = driverInfo?.StandingsLists[0]?.DriverStandings;
 
 	return (
-		<section className=' w-full flex flex-col '>
+		<section className=' w-full flex flex-col  bg-black '>
 			<div className=' z-10 w-full min-h-[8svh] flex justify-center items-center bg-dynamic text-white'>
 				<h2 className='max-w-[90%] text-center'>Current Season Drivers</h2>
 			</div>
 			<div className='relative z-10 w-full '>
+			{/* lg:w-[80%] lg:mx-auto xl:w-[850px] */}
 				<div
 					style={{
 						backgroundImage: backgroundImage
@@ -49,9 +50,9 @@ export const DriverInfo = () => {
 					}}
 					className='relative w-full flex items-center min-h-[80svh] bg-center bg-cover '
 				>
-					<div className='w-[95%] flex z-10 rounded-tr-3xl rounded-br-3xl  pt-4 pb-4 pr-3 bg-white -mt-[10svh]'>
+					<div className='w-[95%] flex z-10 rounded-tr-3xl rounded-br-3xl  pt-4 pb-4 pr-3 bg-white -mt-[10svh] sm:w-[85%] md:w-[60%] lg:w-[550px] lg:mx-auto lg:rounded-tl-3xl lg:rounded-bl-3xl'>
 						{currentDrivers && (
-							<div className='driver-info-cards-box w-[97%] h-[50svh] relative min-h-[60svh] overflow-y-scroll ml-2 flex flex-col  gap-8 z-10  pr-2 pt-4 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-3xl  '>
+							<div className='driver-info-cards-box w-[97%] h-[50svh] relative min-h-[60svh] overflow-y-scroll ml-2 flex flex-col  gap-8 z-10  pr-2 pt-4 border-t-[3px] border-t-dynamic border-r-[3px] border-r-dynamic rounded-tr-3xl '>
 								{currentDrivers.map((driver) => (
 									<DriverInfoCard
 										driver={driver}

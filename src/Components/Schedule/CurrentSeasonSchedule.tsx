@@ -97,7 +97,7 @@ export const CurrentSchedule = () => {
 
 	return (
 		<section className='w-full min-h-[80svh] flex justify-center pt-8 pb-[15svh]'>
-			<div className='w-[90%]  flex flex-col gap-6 '>
+			<div className='w-[90%]  flex flex-col gap-6 md:w-[70%] lg:max-w-[750px]'>
 				{eventSchedule &&
 					eventSchedule.map((data, index) => (
 						<div key={index}>
@@ -162,7 +162,7 @@ export const CurrentScheduleCard: FC<
 						</div>
 					</div>
 					<div className='w-full flex items-center justify-between'>
-						<div className='max-w-[50%] flex flex-col gap-2'>
+						<div className='max-w-[50%] flex flex-col gap-2 md:min-w-[40%] md:text-center'>
 							<p className={textColorCustom}>
 								{eventSchedule.Circuit.Location.locality}
 							</p>
@@ -188,7 +188,7 @@ export const CurrentScheduleCard: FC<
 							showDetails ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
 						} overflow-hidden transition-all duration-500 ease-in-out w-full flex items-center justify-between gap-4`}
 					>
-						<div className='max-w-[50%] flex flex-col gap-2'>
+						<div className='max-w-[50%] flex flex-col gap-2 md:min-w-[40%] md:text-center'>
 							<div>
 								<h4 className="text-sm">Qualifying</h4>
 								<p className={textColorCustom}>
@@ -225,7 +225,7 @@ export const CurrentScheduleCard: FC<
 								</div>
 							)}
 						</div>
-						<div className='max-w-[50%] flex flex-col gap-2'>
+						<div className='max-w-[50%] flex flex-col gap-2 md:min-w-[40%] md:text-center'>
 							<div>
 								<h4 className="text-sm">2st Practice</h4>
 								<p className={textColorCustom}>

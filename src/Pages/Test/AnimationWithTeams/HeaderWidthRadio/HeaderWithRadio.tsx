@@ -23,7 +23,7 @@ export const HeaderWidthRadio = ({
 					backgroundImage: f1gif ? `url(${f1gif})` : "none",
 				}}
 			>
-				<div className='relative w-[80%]  bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
+				<div className='relative w-[80%] md:w-[60%] lg:w-[40%] bg-gray-900 opacity-85 rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500'>
 					<div
 						className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl gap-4`}
 					>

@@ -152,13 +152,13 @@ export const ConstructorStandings = () => {
 					>
 						<div className='w-[95%] flex-col rounded-r-xl  bg-gray-200 items-center'>
 							<div className='w-full flex items-center justify-between gap-6 px-2 pt-4 standing-cards-wrapper'>
-								<div className='flex min-w-[15%] min-h-[6svh] items-center justify-center border-r-2 border-gray-500'>
+								<div className='flex min-w-[15%] min-h-[6svh] items-center justify-center border-r-2 border-gray-500 lg:text-xl'>
 									<h2>{result.position}</h2>
 								</div>
-								<div>
+								<div className="lg:text-xl">
 									<h3>{result.Constructor?.name}</h3>
 								</div>
-								<div className='max-w-[25%] rounded-lg overflow-hidden '>
+								<div className='max-w-[25%] md:max-w-[15%] rounded-lg overflow-hidden lg:max-w-[10%] xl:max-w-[7%]'>
 									<TeamLogo Constructor={result.Constructor?.name} />
 								</div>
 								<div className='bg-gray-300 px-4  rounded-xl text-center'>
@@ -166,7 +166,7 @@ export const ConstructorStandings = () => {
 									<p>PTS</p>
 								</div>
 							</div>
-							<div className='max-w-[40%] standings-car-animation mx-auto pt-4 pb-2'>
+							<div className='max-w-[40%]  standings-car-animation mx-auto pt-4 pb-2 md:max-w-[30%] lg:max-w-[20%] xl:max-w-[15%]'>
 								<CarAvatar Constructor={result.Constructor?.name} />
 							</div>
 						</div>
@@ -178,7 +178,7 @@ export const ConstructorStandings = () => {
 };
 
 export const StandingsResults = () => {
-	const [selectResult, setSelectResult] = useState<string>("driverstandings");
+	const [selectResult, setSelectResult] = useState<string>("constructorstandings");
 
 	const driverstandings =
 		selectResult === "driverstandings"
@@ -195,17 +195,18 @@ export const StandingsResults = () => {
 			<StandingPageHeader />
 			<section className=''>
 				<div className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'>
-					<button
-						className={driverstandings}
-						onClick={() => setSelectResult("driverstandings")}
-					>
-						Drivers
-					</button>
+					
 					<button
 						className={constructorstandings}
 						onClick={() => setSelectResult("constructorstandings")}
 					>
 						Constructors
+					</button>
+					<button
+						className={driverstandings}
+						onClick={() => setSelectResult("driverstandings")}
+					>
+						Drivers
 					</button>
 				</div>
 

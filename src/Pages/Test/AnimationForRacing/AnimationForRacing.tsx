@@ -16,7 +16,7 @@ export const AnimationForRacing = () => {
 					/>
 				</div>
 				<div className=' w-full min-h-[40svh] flex justify-end'>
-					<div className='relative w-[80%] min-h-[40svh] bg-gray-900  rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500 self-end'>
+					<div className='relative w-[80%] md:w-[60%] lg:w-[40%] min-h-[40svh] bg-gray-900  rounded-tl-3xl rounded-bl-3xl flex flex-col animate-fadeLeft delay-500 self-end'>
 						<div
 							className={`${styles.radioItems} w-full flex items-center justify-center  h-[4svh] bg-black rounded-tl-3xl gap-4`}
 						>

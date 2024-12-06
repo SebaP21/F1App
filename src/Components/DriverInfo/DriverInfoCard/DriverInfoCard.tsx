@@ -18,7 +18,7 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 			{driver ? (
 				<div
 					key={driver.Driver.driverId + driver.Driver.dateOfBirth}
-					className=' max-w-[96%]  flex flex-col gap-6 '
+					className=' max-w-[96%]  flex flex-col gap-6  '
 					onClick={() => setShowDetails((prev) => !prev)}
 				>
 					<div

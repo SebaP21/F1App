@@ -98,7 +98,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 				<div
 					className={`${
 						showDetails === Number(result.round) && " scale:105 my-6"
-					} transition-all w-full min-h-[40svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 hover:scale-105 `}
+					} transition-all w-full min-h-[32svh] border border-black rounded-xl flex flex-col cursor-pointer my-2 hover:scale-105 mx-auto max-w-[740px] `}
 					key={index}
 					onClick={handleDetailsClick}
 					ref={ref}
@@ -120,15 +120,15 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 								</p>
 								<h5>{timeToTimeZone(result.date, result.time)}</h5>
 							</div>
-							<div className='max-w-[50%] flex items-center justify-center'>
+							<div className='max-w-[50%] flex items-center justify-center md:max-w-[40%]'>
 								<CircuitsAvatar country={result.Circuit.Location.country} />
 							</div>
 						</div>
-						<div className='w-full min-h-[27svh] grid grid-cols-3 gap-1 bg-gray-600 mt-2 rounded-br-xl rounded-bl-xl '>
+						<div className='w-full min-h-[26svh] grid grid-cols-3 gap-1 bg-gray-600 mt-2 rounded-br-xl rounded-bl-xl md:min-h-[33svh]'>
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 2 ? "min-h-[17svh]" : "min-h-0"
+										animateStep >= 2 ? "min-h-[17svh] md:min-h-[25svh]" : "min-h-0"
 									} flex justify-center items-center bg-slate-300 rounded-bl-xl rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[95%] -mt-[8svh] flex flex-col gap-2 text-center'>
@@ -145,7 +145,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 3 ? "min-h-[22svh]" : "min-h-0"
+										animateStep >= 3 ? "min-h-[22svh] md:min-h-[30svh]" : "min-h-0"
 									} flex justify-center items-center bg-amber-500 rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[100%]  -mt-[9svh] flex flex-col gap-2 text-center'>
@@ -162,7 +162,7 @@ export const CurrentRacesResultCard: FC<CurrentRacesResultCardProps> = ({
 							<div className=' flex items-end'>
 								<div
 									className={`w-full ${
-										animateStep >= 1 ? "min-h-[14svh]" : "min-h-0"
+										animateStep >= 1 ? "min-h-[14svh] md:min-h-[22svh]" : "min-h-0"
 									} flex justify-center items-center bg-amber-700 rounded-br-xl rounded-t-xl transition-all duration-700 ease-in-out`}
 								>
 									<div className='w-[95%] -mt-[8svh] flex flex-col gap-2 text-center'>

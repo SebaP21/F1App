@@ -1,18 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-// Typ dla kolorów zespołów
+
 export type TeamColors = {
   [key: string]: string;
 };
 
-// Typ dla kontekstu
 interface TeamContextType {
   selectedTeam: string | null;
   teamColor: string | null;
   selectTeam: (teamId: string, color: string) => void;
 }
 
-// Typ dla komponentu Providera
 interface TeamProviderProps {
   children: ReactNode;
 }

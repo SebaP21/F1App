@@ -24,14 +24,12 @@ export const CommonLayout = () => {
 						<ChooseYourTeam onTeamSelect={handleTeamSelection} />
 					) : (
 						<>
-							<div className="flex flex-col sm:hidden">
+							<div className="flex flex-col ">
 								<Nav />
 								<AppHeader />
 								<Outlet />
 							</div>
-              <div className="hidden w-full min-h-[100vh] bg-dynamic sm:flex justify-center items-center">
-                      <h3>This app is only for mobile now ! </h3>
-              </div>
+             
 						</>
 					)}
 				</>

@@ -28,13 +28,13 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 				onClick={expand}
 				className={`transition-all ${
 					expanded ? "w-[90%]" : "w-[88%]"
-				}  min-h-[17svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer `}
+				}  min-h-[17svh] sm:min-h-[20vh] md:min-h-[30svh] lg:min-h-[40svh] xl:min-h-[50svh] 2xl:min-h-[55svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer  lg:mb-4`}
 			>
 				<div className='w-full flex items-center justify-between  gap-4'>
-					<div className='flex min-w-[15%] h-[7svh] items-center justify-center border-r-2 border-gray-500'>
+					<div className='flex min-w-[15%] h-[7svh] items-center justify-center border-r-2 border-gray-500 lg:text-3xl md:text-3xl'>
 						<h2>{result.position}</h2>
 					</div>
-					<div className='flex flex-col'>
+					<div className='flex flex-col lg:text-3xl md:text-3xl'>
 						<h5>{result.Driver.givenName}</h5>
 						<h3>{result.Driver.familyName}</h3>
 					</div>
@@ -43,7 +43,8 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 							givenName={result.Driver.givenName}
 							familyName={result.Driver.familyName}
 						>
-							<div className='bg-gray-300 bg-opacity-90 py-1 px-2 rounded-xl -mr-6'>
+							<div className='bg-gray-300 bg-opacity-90 py-1 px-2 rounded-xl -mr-6 lg:min-w-[30%] lg:min-h-[30%]
+							flex flex-col justify-center items-center lg:-mr-16 lg:text-2xl'>
 								<h4>{result.points}</h4>
 								<p>PTS</p>
 							</div>
