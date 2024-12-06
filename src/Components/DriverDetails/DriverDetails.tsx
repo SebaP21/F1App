@@ -110,6 +110,7 @@ export const DriverDetails: FC<DriverDetailsProps> = ({ driverId }) => {
 				<section
 					className='fixed inset-0 top-[1svh] z-50 driver-details-card bg-white text-white flex flex-col mx-auto rounded-3xl mb-[11svh] md:grid md:grid-cols-2  md:gap-6 md:p-2 lg:max-w-[1100px]'
 					style={{ width: "95vw" }}
+					
 				>
 					<div className='hidden md:flex flex-col  gap-8 pt-4 m-2'>
 						<div className='w-full border-t-[2px] border-r-[2px] border-gray-300 rounded-tr-3xl flex justify-between items-center text-black p-4'>
