@@ -147,7 +147,7 @@ export const ConstructorStandings = () => {
 			) : (
 				constructorResults.map((result) => (
 					<div
-						className='w-full flex flex-col'
+						className='w-full flex flex-col overflow-hidden'
 						key={result.Constructor?.constructorId}
 					>
 						<div className='w-[95%] flex-col rounded-r-xl  bg-gray-200 items-center'>
@@ -193,7 +193,7 @@ export const StandingsResults = () => {
 	return (
 		<>
 			<StandingPageHeader />
-			<section className=''>
+			<section className='flex flex-col items-center'>
 				<div className='min-h-[7svh] w-full bg-dynamic flex items-center justify-evenly text-white font-Formula1-Bold border-t-2'>
 					
 					<button
@@ -210,7 +210,7 @@ export const StandingsResults = () => {
 					</button>
 				</div>
 
-				<div className='w-full flex flex-col gap-4 pt-8 pb-[13svh]'>
+				<div className='md:max-w-[1100px]  w-full flex flex-col gap-4 pt-8 pb-[13svh]'>
 					{selectResult === "driverstandings" ? (
 						<DriverStandings />
 					) : (

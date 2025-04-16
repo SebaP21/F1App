@@ -229,7 +229,7 @@ export const CurrentScheduleCard: FC<
 							<div>
 								<h4 className="text-sm">2st Practice</h4>
 								<p className={textColorCustom}>
-									{eventSchedule.SecondPractice.date && (
+									{eventSchedule.SecondPractice?.date && (
 										<>
 											{timeToTimeZone(
 												eventSchedule.SecondPractice.date,
@@ -242,7 +242,7 @@ export const CurrentScheduleCard: FC<
 							<div>
 								<h4 className="text-sm">1st Practice</h4>
 								<p className={textColorCustom}>
-									{eventSchedule.FirstPractice.date && (
+									{eventSchedule.FirstPractice?.date && (
 										<>
 											{timeToTimeZone(
 												eventSchedule.FirstPractice.date,

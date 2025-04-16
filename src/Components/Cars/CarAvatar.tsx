@@ -29,7 +29,7 @@ export const CarAvatar: FC<ConstructorProps> = ({ Constructor }) => {
 
 	return (
 		<img
-			src={`https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2024/${Constructor}.png`}
+			src={`https://media.formula1.com/d_team_car_fallback_image.png/content/dam/fom-website/teams/2025/${Constructor}.png`}
 			alt=''
 		/>
 	);

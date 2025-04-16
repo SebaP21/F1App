@@ -44,11 +44,11 @@ export const DriverInfoCard: FC<DriverInfoCardProps> = ({ driver }) => {
 				</div>
 			)}
 
-			{showDetails && (
+			{/* {showDetails && (
 				<CurrentStandingsContextProvider>
 					<DriverDetails driverId={driver?.Driver.driverId} />
 				</CurrentStandingsContextProvider>
-			)}
+			)} */}
 		</>
 	);
 };

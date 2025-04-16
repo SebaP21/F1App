@@ -27,7 +27,7 @@ export const DriverCurrentResultsContextProvider: FC<{
 	useEffect(() => {
 		let mounted = true;
 		fetch(
-			`https://ergast.com/api/f1/current/drivers/${selectDriver}/results.json`
+			`https://api.jolpi.ca/ergast/f1/current/drivers/${selectDriver}/results.json`
 		)
 			.then((response) => response.json())
 			.then((info) => {

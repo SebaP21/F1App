@@ -63,11 +63,12 @@ export const CurrentRacesResult = () => {
 	};
   
 	return (
-	  <section className="w-full min-h-[80svh] flex flex-col items-center pt-8 pb-[15svh]">
-		<div className="w-[90%] flex flex-col gap-2 md:gap-6 md:pt-6">
+	  <section className="w-full  flex flex-col items-center pt-8 pb-[15svh]">
 		  <h1 className="text-center">Last results</h1>
+		<div className="w-[90%] flex flex-col gap-1 justify-start ">
 		  {numberOfRaces.slice().reverse().map((round) => (
-			<div key={round} >
+			<div key={round}>
+			
 			  <CurrentRacesResultCard
 				round={round.toString()}
 				showDetails={showDetails}

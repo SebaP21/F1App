@@ -28,7 +28,7 @@ export const DriverStandingCard: FC<DriverStandingCardProps> = ({
 				onClick={expand}
 				className={`transition-all ${
 					expanded ? "w-[90%]" : "w-[88%]"
-				}  min-h-[17svh] sm:min-h-[20vh] md:min-h-[30svh] lg:min-h-[40svh] xl:min-h-[50svh] 2xl:min-h-[55svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer  lg:mb-4`}
+				}  min-h-[17svh] sm:min-h-[20vh] md:min-h-[20svh] lg:min-h-[25svh] xl:min-h-[30svh] 2xl:min-h-[35svh] flex rounded-r-xl bg-gray-200 hover:scale-105 cursor-pointer  lg:mb-4`}
 			>
 				<div className='w-full flex items-center justify-between  gap-4'>
 					<div className='flex min-w-[15%] h-[7svh] items-center justify-center border-r-2 border-gray-500 lg:text-3xl md:text-3xl'>

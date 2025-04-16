@@ -10,7 +10,7 @@ export const useRaceQuery = (round: number | string | undefined) =>
 	useQuery<PastRaceQueryData>({
 		queryKey: [round, "round-race-query"],
 		queryFn: () =>
-			fetch(`https://ergast.com/api/f1/current/${round}/results.json`).then((response) =>
+			fetch(`https://api.jolpi.ca/ergast/f1/current/${round}/results.json`).then((response) =>
 				response.json()
 			),
 		enabled: !!round,

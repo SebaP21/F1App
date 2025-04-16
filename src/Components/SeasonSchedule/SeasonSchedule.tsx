@@ -23,7 +23,7 @@ export const SeasonSchedule = () => {
 
 	useEffect(() => {
 		let mounted = true;
-		fetch("https://api.openf1.org/v1/sessions?year=2024")
+		fetch("https://api.openf1.org/v1/sessions?year=2025")
 			.then((response) => response.json())
 			.then((sessions) => {
 				if (!mounted) return;

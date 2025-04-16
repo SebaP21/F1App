@@ -8,7 +8,7 @@ type DriverQueryData = {
 }
 export const useDriverQuery = (driverId: string | undefined) => useQuery<DriverQueryData>({
     queryKey: [driverId, "driver-query"],
-    queryFn: () => fetch(`https://ergast.com/api/f1/current/drivers/${driverId}/results.json`)
+    queryFn: () => fetch(`https://api.jolpi.ca/ergast/f1/current/drivers/${driverId}.json`)
         .then((response) => response.json()),
 
 })
